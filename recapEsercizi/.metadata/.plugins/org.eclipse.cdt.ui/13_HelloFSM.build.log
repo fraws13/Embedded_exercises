@@ -1,0 +1,10 @@
+18:36:55 **** Incremental Build of configuration Debug for project 13_HelloFSM ****
+make -j14 all 
+arm-none-eabi-size  13_HelloFSM.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6952	     12	   1588	   8552	   2168	13_HelloFSM.elf
+Finished building: default.size.stdout
+ 
+
+18:36:55 Build Finished. 0 errors, 0 warnings. (took 192ms)
+

@@ -1,0 +1,841 @@
+20:56:17 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9536	     12	   1772	  11320	   2c38	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+20:56:24 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9536	     12	   1772	  11320	   2c38	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+20:57:50 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc -o "ese4_codaCONtimer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\recapEsercizi\timer\ese4_codaCONtimer\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ese4_codaCONtimer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ese4_codaCONtimer.elf
+ 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+arm-none-eabi-objdump -h -S ese4_codaCONtimer.elf  > "ese4_codaCONtimer.list"
+   text	   data	    bss	    dec	    hex	filename
+   9532	     12	   1772	  11316	   2c34	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+Finished building: ese4_codaCONtimer.list
+ 
+20:58:35 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "ese4_codaCONtimer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\recapEsercizi\timer\ese4_codaCONtimer\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ese4_codaCONtimer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ese4_codaCONtimer.elf
+ 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+arm-none-eabi-objdump -h -S ese4_codaCONtimer.elf  > "ese4_codaCONtimer.list"
+   text	   data	    bss	    dec	    hex	filename
+   9308	     12	   1772	  11092	   2b54	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+Finished building: ese4_codaCONtimer.list
+ 
+21:00:18 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32g474retx.d" -MT"Core/Startup/startup_stm32g474retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32g474retx.o" "../Core/Startup/startup_stm32g474retx.s"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc -o "ese4_codaCONtimer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\recapEsercizi\timer\ese4_codaCONtimer\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ese4_codaCONtimer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ese4_codaCONtimer.elf
+ 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+arm-none-eabi-objdump -h -S ese4_codaCONtimer.elf  > "ese4_codaCONtimer.list"
+   text	   data	    bss	    dec	    hex	filename
+   9304	     12	   1772	  11088	   2b50	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+Finished building: ese4_codaCONtimer.list
+ 
+21:01:53 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9304	     12	   1772	  11088	   2b50	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+21:04:12 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc -o "ese4_codaCONtimer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\recapEsercizi\timer\ese4_codaCONtimer\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ese4_codaCONtimer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ese4_codaCONtimer.elf
+ 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+arm-none-eabi-objdump -h -S ese4_codaCONtimer.elf  > "ese4_codaCONtimer.list"
+   text	   data	    bss	    dec	    hex	filename
+   9308	     12	   1772	  11092	   2b54	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+Finished building: ese4_codaCONtimer.list
+ 
+21:04:50 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9308	     12	   1772	  11092	   2b54	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+21:07:14 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9308	     12	   1772	  11092	   2b54	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+17:08:44 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9308	     12	   1772	  11092	   2b54	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+17:09:25 **** Incremental Build of configuration Debug for project ese4_codaCONtimer ****
+make -j14 all 
+arm-none-eabi-size  ese4_codaCONtimer.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9308	     12	   1772	  11092	   2b54	ese4_codaCONtimer.elf
+Finished building: default.size.stdout
+ 
+18:31:08 **** Build of configuration Debug for project 13_HelloFSM ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/button.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/button.d" -MT"Core/Src/button.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/button.o"
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/led.d" -MT"Core/Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/led.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c:36:9: warning: ISO C99 requires whitespace after the macro name
+   36 | #define FYS_CYCLE_DURATION;
+      |         ^~~~~~~~~~~~~~~~~~
+../Core/Src/fsm_logic.c: In function 'FSM_init':
+../Core/Src/fsm_logic.c:103:37: error: 'cycle_duration' undeclared (first use in this function)
+  103 |                 fsm.cycle_duration= cycle_duration;
+      |                                     ^~~~~~~~~~~~~~
+../Core/Src/fsm_logic.c:103:37: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/fsm_logic.c: In function 'FSM_step':
+../Core/Src/fsm_logic.c:136:33: error: 'start' undeclared (first use in this function)
+  136 |         duration =HAL_GetTick()-start;
+      |                                 ^~~~~
+../Core/Src/fsm_logic.c:137:25: error: 'FSM_t' {aka 'struct FSM_s'} has no member named 'ncycle_duration'; did you mean 'cycle_duration'?
+  137 |         if(duration<fsm.ncycle_duration){
+      |                         ^~~~~~~~~~~~~~~
+      |                         cycle_duration
+make: *** [Core/Src/subdir.mk:46: Core/Src/fsm_logic.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+18:36:47 **** Incremental Build of configuration Debug for project 13_HelloFSM ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "13_HelloFSM.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\hello-fsm-master\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="13_HelloFSM.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 13_HelloFSM.elf
+ 
+arm-none-eabi-size  13_HelloFSM.elf 
+arm-none-eabi-objdump -h -S 13_HelloFSM.elf  > "13_HelloFSM.list"
+   text	   data	    bss	    dec	    hex	filename
+   6952	     12	   1588	   8552	   2168	13_HelloFSM.elf
+Finished building: default.size.stdout
+ 
+Finished building: 13_HelloFSM.list
+ 
+18:36:55 **** Incremental Build of configuration Debug for project 13_HelloFSM ****
+make -j14 all 
+arm-none-eabi-size  13_HelloFSM.elf 
+   text	   data	    bss	    dec	    hex	filename
+   6952	     12	   1588	   8552	   2168	13_HelloFSM.elf
+Finished building: default.size.stdout
+ 
+19:39:36 **** Build of configuration Debug for project lanternasemaforica ****
+make -j14 all 
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32g474retx.d" -MT"Core/Startup/startup_stm32g474retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32g474retx.o" "../Core/Startup/startup_stm32g474retx.s"
+arm-none-eabi-gcc "../Core/Src/button.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/button.d" -MT"Core/Src/button.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/button.o"
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/led.d" -MT"Core/Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/led.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/queue.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/queue.d" -MT"Core/Src/queue.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/queue.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32g4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32g4xx.d" -MT"Core/Src/system_stm32g4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32g4xx.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/timer.o"
+In file included from ../Core/Inc/fsm_logic.h:6,
+                 from ../Core/Src/fsm_logic.c:1:
+../Core/Inc/timer.h:11:9: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   11 |         TIM_HandleTypeDef* htim;
+      |         ^~~~~~~~~~~~~~~~~
+      |         EXTI_HandleTypeDef
+../Core/Inc/timer.h:22:35: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   22 | int8_t timer_init(timer_t* timer, TIM_HandleTypeDef* handler, uint32_t frequency);
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   EXTI_HandleTypeDef
+../Core/Inc/timer.h:59:43: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   59 | int8_t timer_is_myhandler(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                           ^~~~~~~~~~~~~~~~~
+      |                                           EXTI_HandleTypeDef
+../Core/Inc/timer.h:80:45: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   80 | int8_t timer_period_elapsed(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                             ^~~~~~~~~~~~~~~~~
+      |                                             EXTI_HandleTypeDef
+../Core/Src/timer.c:2:10: fatal error: tim.h: No such file or directory
+    2 | #include "tim.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:52: Core/Src/timer.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Inc/fsm_logic.h:6,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/timer.h:11:9: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   11 |         TIM_HandleTypeDef* htim;
+      |         ^~~~~~~~~~~~~~~~~
+      |         EXTI_HandleTypeDef
+make: *** [Core/Src/subdir.mk:52: Core/Src/fsm_logic.o] Error 1
+../Core/Inc/timer.h:22:35: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   22 | int8_t timer_init(timer_t* timer, TIM_HandleTypeDef* handler, uint32_t frequency);
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   EXTI_HandleTypeDef
+../Core/Inc/timer.h:59:43: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   59 | int8_t timer_is_myhandler(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                           ^~~~~~~~~~~~~~~~~
+      |                                           EXTI_HandleTypeDef
+../Core/Inc/timer.h:80:45: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   80 | int8_t timer_period_elapsed(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                             ^~~~~~~~~~~~~~~~~
+      |                                             EXTI_HandleTypeDef
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+19:55:40 **** Incremental Build of configuration Debug for project lanternasemaforica ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/timer.o"
+../Core/Src/timer.c:2:10: fatal error: tim.h: No such file or directory
+    2 | #include "tim.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:52: Core/Src/timer.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Inc/fsm_logic.h:6,
+                 from ../Core/Src/fsm_logic.c:1:
+../Core/Inc/timer.h:11:9: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   11 |         TIM_HandleTypeDef* htim;
+      |         ^~~~~~~~~~~~~~~~~
+      |         EXTI_HandleTypeDef
+In file included from ../Core/Inc/fsm_logic.h:6,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/timer.h:11:9: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   11 |         TIM_HandleTypeDef* htim;
+      |         ^~~~~~~~~~~~~~~~~
+      |         EXTI_HandleTypeDef
+../Core/Inc/timer.h:22:35: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   22 | int8_t timer_init(timer_t* timer, TIM_HandleTypeDef* handler, uint32_t frequency);
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   EXTI_HandleTypeDef
+../Core/Inc/timer.h:22:35: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   22 | int8_t timer_init(timer_t* timer, TIM_HandleTypeDef* handler, uint32_t frequency);
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   EXTI_HandleTypeDef
+../Core/Inc/timer.h:59:43: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   59 | int8_t timer_is_myhandler(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                           ^~~~~~~~~~~~~~~~~
+      |                                           EXTI_HandleTypeDef
+../Core/Inc/timer.h:59:43: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   59 | int8_t timer_is_myhandler(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                           ^~~~~~~~~~~~~~~~~
+      |                                           EXTI_HandleTypeDef
+../Core/Inc/timer.h:80:45: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   80 | int8_t timer_period_elapsed(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                             ^~~~~~~~~~~~~~~~~
+      |                                             EXTI_HandleTypeDef
+../Core/Inc/timer.h:80:45: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   80 | int8_t timer_period_elapsed(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                             ^~~~~~~~~~~~~~~~~
+      |                                             EXTI_HandleTypeDef
+make: *** [Core/Src/subdir.mk:52: Core/Src/fsm_logic.o] Error 1
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+19:58:00 **** Incremental Build of configuration Debug for project lanternasemaforica ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/timer.o"
+../Core/Src/timer.c:2:10: fatal error: tim.h: No such file or directory
+    2 | #include "tim.h"
+      |          ^~~~~~~
+compilation terminated.
+make: *** [Core/Src/subdir.mk:52: Core/Src/timer.o] Error 1
+make: *** Waiting for unfinished jobs....
+In file included from ../Core/Inc/fsm_logic.h:6,
+                 from ../Core/Src/main.c:25:
+../Core/Inc/timer.h:11:9: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   11 |         TIM_HandleTypeDef* htim;
+      |         ^~~~~~~~~~~~~~~~~
+      |         EXTI_HandleTypeDef
+In file included from ../Core/Inc/fsm_logic.h:6,
+                 from ../Core/Src/fsm_logic.c:1:
+../Core/Inc/timer.h:11:9: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   11 |         TIM_HandleTypeDef* htim;
+      |         ^~~~~~~~~~~~~~~~~
+      |         EXTI_HandleTypeDef
+../Core/Inc/timer.h:22:35: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   22 | int8_t timer_init(timer_t* timer, TIM_HandleTypeDef* handler, uint32_t frequency);
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   EXTI_HandleTypeDef
+../Core/Inc/timer.h:22:35: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   22 | int8_t timer_init(timer_t* timer, TIM_HandleTypeDef* handler, uint32_t frequency);
+      |                                   ^~~~~~~~~~~~~~~~~
+      |                                   EXTI_HandleTypeDef
+../Core/Inc/timer.h:59:43: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   59 | int8_t timer_is_myhandler(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                           ^~~~~~~~~~~~~~~~~
+      |                                           EXTI_HandleTypeDef
+../Core/Inc/timer.h:59:43: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   59 | int8_t timer_is_myhandler(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                           ^~~~~~~~~~~~~~~~~
+      |                                           EXTI_HandleTypeDef
+../Core/Inc/timer.h:80:45: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   80 | int8_t timer_period_elapsed(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                             ^~~~~~~~~~~~~~~~~
+      |                                             EXTI_HandleTypeDef
+../Core/Inc/timer.h:80:45: error: unknown type name 'TIM_HandleTypeDef'; did you mean 'EXTI_HandleTypeDef'?
+   80 | int8_t timer_period_elapsed(timer_t* timer, TIM_HandleTypeDef* handler);
+      |                                             ^~~~~~~~~~~~~~~~~
+      |                                             EXTI_HandleTypeDef
+make: *** [Core/Src/subdir.mk:52: Core/Src/fsm_logic.o] Error 1
+make: *** [Core/Src/subdir.mk:52: Core/Src/main.o] Error 1
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+20:00:05 **** Incremental Build of configuration Debug for project lanternasemaforica ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/timer.o"
+arm-none-eabi-gcc -o "lanternasemaforica.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica\lanternasemaforica\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica.elf
+ 
+arm-none-eabi-size  lanternasemaforica.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica.elf  > "lanternasemaforica.list"
+   text	   data	    bss	    dec	    hex	filename
+   7396	     12	   1596	   9004	   232c	lanternasemaforica.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica.list
+ 
+20:00:19 **** Incremental Build of configuration Debug for project lanternasemaforica ****
+make -j14 all 
+arm-none-eabi-size  lanternasemaforica.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7396	     12	   1596	   9004	   232c	lanternasemaforica.elf
+Finished building: default.size.stdout
+ 
+20:01:20 **** Incremental Build of configuration Debug for project lanternasemaforica ****
+make -j14 all 
+arm-none-eabi-size  lanternasemaforica.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7396	     12	   1596	   9004	   232c	lanternasemaforica.elf
+Finished building: default.size.stdout
+ 
+20:03:24 **** Incremental Build of configuration Debug for project lanternasemaforica ****
+make -j14 all 
+arm-none-eabi-size  lanternasemaforica.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7396	     12	   1596	   9004	   232c	lanternasemaforica.elf
+Finished building: default.size.stdout
+ 
+20:06:25 **** Incremental Build of configuration Debug for project lanternasemaforica ****
+make -j14 all 
+arm-none-eabi-size  lanternasemaforica.elf 
+   text	   data	    bss	    dec	    hex	filename
+   7396	     12	   1596	   9004	   232c	lanternasemaforica.elf
+Finished building: default.size.stdout
+ 
+20:11:22 **** Incremental Build of configuration Debug for project lanternasemaforica ****
+make -j14 all 
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Core/Src/button.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/button.d" -MT"Core/Src/button.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/button.o"
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/led.d" -MT"Core/Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/led.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/queue.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/queue.d" -MT"Core/Src/queue.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/queue.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32g4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32g4xx.d" -MT"Core/Src/system_stm32g4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32g4xx.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/timer.o"
+arm-none-eabi-gcc -o "lanternasemaforica.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica\lanternasemaforica\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica.elf
+ 
+arm-none-eabi-size  lanternasemaforica.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica.elf  > "lanternasemaforica.list"
+   text	   data	    bss	    dec	    hex	filename
+   7396	     12	   1596	   9004	   232c	lanternasemaforica.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica.list
+ 
+12:00:17 **** Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.d" -MT"Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_tim_ex.o"
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -DDEBUG -c -x assembler-with-cpp -MMD -MP -MF"Core/Startup/startup_stm32g474retx.d" -MT"Core/Startup/startup_stm32g474retx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Startup/startup_stm32g474retx.o" "../Core/Startup/startup_stm32g474retx.s"
+arm-none-eabi-gcc "../Core/Src/button.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/button.d" -MT"Core/Src/button.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/button.o"
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/led.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/led.d" -MT"Core/Src/led.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/led.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/queue.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/queue.d" -MT"Core/Src/queue.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/queue.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_hal_msp.d" -MT"Core/Src/stm32g4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32g4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32g4xx_it.d" -MT"Core/Src/stm32g4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32g4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
+arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32g4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32g4xx.d" -MT"Core/Src/system_stm32g4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32g4xx.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/timer.o"
+../Core/Src/main.c:38:9: warning: "FSM_CYCLE_DURATION" redefined
+   38 | #define FSM_CYCLE_DURATION (10) //ogni 10 ms la funzione FSM_step viene chiamata
+      |         ^~~~~~~~~~~~~~~~~~
+../Core/Src/fsm_logic.c:77:8: error: conflicting types for 'FSM_init'; have 'int8_t(led_t *, led_t *, led_t *, button_t *, timer_t *, uint32_t)' {aka 'signed char(struct led_s *, struct led_s *, struct led_s *, struct button_s *, struct timer_s *, long unsigned int)'}
+   77 | int8_t FSM_init(led_t* led_rosso, led_t* led_giallo, led_t* led_verde, button_t* button, timer_t* timer, uint32_t cycle_duration)
+      |        ^~~~~~~~
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/fsm_logic.h:12:9: note: this is the location of the previous definition
+   12 | #define FSM_CYCLE_DURATION              (100) //milliseconds
+      |         ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/fsm_logic.c:1:
+../Core/Inc/fsm_logic.h:17:8: note: previous declaration of 'FSM_init' with type 'int8_t()' {aka 'signed char()'}
+   17 | int8_t FSM_init(...);
+      |        ^~~~~~~~
+../Core/Src/fsm_logic.c: In function 'FSM_update_state':
+../Core/Src/fsm_logic.c:157:28: error: implicit declaration of function 'FSM_inactive' [-Wimplicit-function-declaration]
+  157 |                         if(FSM_inactive() == FSM_OK){
+      |                            ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c:154:9: warning: enumeration value 'VERDE_ON' not handled in switch [-Wswitch]
+  154 |         switch(fsm.state)
+      |         ^~~~~~
+../Core/Src/fsm_logic.c:154:9: warning: enumeration value 'GIALLO_ON' not handled in switch [-Wswitch]
+../Core/Src/fsm_logic.c:154:9: warning: enumeration value 'ROSSO_ON' not handled in switch [-Wswitch]
+../Core/Src/fsm_logic.c: At top level:
+../Core/Src/fsm_logic.c:165:15: error: conflicting types for 'FSM_inactive'; have 'int8_t()' {aka 'signed char()'}
+  165 | static int8_t FSM_inactive(){
+      |               ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c:157:28: note: previous implicit declaration of 'FSM_inactive' with type 'int()'
+  157 |                         if(FSM_inactive() == FSM_OK){
+      |                            ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c:165:15: warning: 'FSM_inactive' defined but not used [-Wunused-function]
+  165 | static int8_t FSM_inactive(){
+      |               ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/fsm_logic.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+12:01:17 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c:78:8: error: conflicting types for 'FSM_init'; have 'int8_t(led_t *, led_t *, led_t *, button_t *, timer_t *, uint32_t)' {aka 'signed char(struct led_s *, struct led_s *, struct led_s *, struct button_s *, struct timer_s *, long unsigned int)'}
+   78 | int8_t FSM_init(led_t* led_rosso, led_t* led_giallo, led_t* led_verde, button_t* button, timer_t* timer, uint32_t cycle_duration)
+      |        ^~~~~~~~
+In file included from ../Core/Src/fsm_logic.c:1:
+../Core/Inc/fsm_logic.h:17:8: note: previous declaration of 'FSM_init' with type 'int8_t()' {aka 'signed char()'}
+   17 | int8_t FSM_init(...);
+      |        ^~~~~~~~
+../Core/Src/fsm_logic.c: In function 'FSM_update_state':
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'VERDE_ON' not handled in switch [-Wswitch]
+  155 |         switch(fsm.state)
+      |         ^~~~~~
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'GIALLO_ON' not handled in switch [-Wswitch]
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'ROSSO_ON' not handled in switch [-Wswitch]
+make: *** [Core/Src/subdir.mk:55: Core/Src/fsm_logic.o] Error 1
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+12:02:43 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/fsm_logic.c: In function 'FSM_update_state':
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'VERDE_ON' not handled in switch [-Wswitch]
+  155 |         switch(fsm.state)
+      |         ^~~~~~
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'GIALLO_ON' not handled in switch [-Wswitch]
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'ROSSO_ON' not handled in switch [-Wswitch]
+../Core/Src/main.c:38:9: warning: "FSM_CYCLE_DURATION" redefined
+   38 | #define FSM_CYCLE_DURATION (10) //ogni 10 ms la funzione FSM_step viene chiamata
+      |         ^~~~~~~~~~~~~~~~~~
+In file included from ../Core/Src/main.c:26:
+../Core/Inc/fsm_logic.h:12:9: note: this is the location of the previous definition
+   12 | #define FSM_CYCLE_DURATION              (100) //milliseconds
+      |         ^~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+   9224	     12	   1676	  10912	   2aa0	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+12:02:49 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-size  lanternasemaforica2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9224	     12	   1676	  10912	   2aa0	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+12:22:33 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+../Core/Src/fsm_logic.c: In function 'FSM_update_state':
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'VERDE_ON' not handled in switch [-Wswitch]
+  155 |         switch(fsm.state)
+      |         ^~~~~~
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'GIALLO_ON' not handled in switch [-Wswitch]
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'ROSSO_ON' not handled in switch [-Wswitch]
+../Core/Src/fsm_logic.c: In function 'FSM_inactive':
+../Core/Src/fsm_logic.c:173:39: error: called object is not a function or function pointer
+  173 |             &&(timer_start(fsm.timer) == TIMER_OK)
+      |               ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/fsm_logic.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+12:23:18 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_update_state':
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'VERDE_ON' not handled in switch [-Wswitch]
+  155 |         switch(fsm.state)
+      |         ^~~~~~
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'GIALLO_ON' not handled in switch [-Wswitch]
+../Core/Src/fsm_logic.c:155:9: warning: enumeration value 'ROSSO_ON' not handled in switch [-Wswitch]
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  10932	     12	   1676	  12620	   314c	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+16:23:32 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc "../Core/Src/timer.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/timer.d" -MT"Core/Src/timer.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/timer.o"
+../Core/Src/fsm_logic.c: In function 'FSM_update_state':
+../Core/Src/fsm_logic.c:163:28: error: implicit declaration of function 'FSM_verde_on' [-Wimplicit-function-declaration]
+  163 |                         if(FSM_verde_on() == FSM_OK){
+      |                            ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c:168:28: error: implicit declaration of function 'FSM_giallo_on' [-Wimplicit-function-declaration]
+  168 |                         if(FSM_giallo_on() == FSM_OK){
+      |                            ^~~~~~~~~~~~~
+../Core/Src/fsm_logic.c:173:28: error: implicit declaration of function 'FSM_rosso_on' [-Wimplicit-function-declaration]
+  173 |                         if(FSM_rosso_on() == FSM_OK){
+      |                            ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c: At top level:
+../Core/Src/fsm_logic.c:208:15: error: conflicting types for 'FSM_verde_on'; have 'int8_t()' {aka 'signed char()'}
+  208 | static int8_t FSM_verde_on(){
+      |               ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c:163:28: note: previous implicit declaration of 'FSM_verde_on' with type 'int()'
+  163 |                         if(FSM_verde_on() == FSM_OK){
+      |                            ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c:208:15: warning: 'FSM_verde_on' defined but not used [-Wunused-function]
+  208 | static int8_t FSM_verde_on(){
+      |               ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/fsm_logic.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+16:23:55 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_update_state':
+../Core/Src/fsm_logic.c:169:28: error: implicit declaration of function 'FSM_giallo_on' [-Wimplicit-function-declaration]
+  169 |                         if(FSM_giallo_on() == FSM_OK){
+      |                            ^~~~~~~~~~~~~
+../Core/Src/fsm_logic.c:174:28: error: implicit declaration of function 'FSM_rosso_on' [-Wimplicit-function-declaration]
+  174 |                         if(FSM_rosso_on() == FSM_OK){
+      |                            ^~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/fsm_logic.o] Error 1
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+16:25:24 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_giallo_on':
+../Core/Src/fsm_logic.c:232:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  232 | }
+      | ^
+../Core/Src/fsm_logic.c: In function 'FSM_rosso_on':
+../Core/Src/fsm_logic.c:235:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  235 | }
+      | ^
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11240	     12	   1676	  12928	   3280	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+16:25:54 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-size  lanternasemaforica2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11240	     12	   1676	  12928	   3280	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+16:27:38 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-size  lanternasemaforica2.elf 
+   text	   data	    bss	    dec	    hex	filename
+  11240	     12	   1676	  12928	   3280	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+16:31:01 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_giallo_on':
+../Core/Src/fsm_logic.c:234:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  234 | }
+      | ^
+../Core/Src/fsm_logic.c: In function 'FSM_rosso_on':
+../Core/Src/fsm_logic.c:237:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  237 | }
+      | ^
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11240	     12	   1676	  12928	   3280	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+16:32:58 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_giallo_on':
+../Core/Src/fsm_logic.c:234:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  234 | }
+      | ^
+../Core/Src/fsm_logic.c: In function 'FSM_rosso_on':
+../Core/Src/fsm_logic.c:237:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  237 | }
+      | ^
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11240	     12	   1676	  12928	   3280	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+16:33:14 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_giallo_on':
+../Core/Src/fsm_logic.c:234:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  234 | }
+      | ^
+../Core/Src/fsm_logic.c: In function 'FSM_rosso_on':
+../Core/Src/fsm_logic.c:237:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  237 | }
+      | ^
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11240	     12	   1676	  12928	   3280	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+16:37:30 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_giallo_on':
+../Core/Src/fsm_logic.c:231:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  231 | }
+      | ^
+../Core/Src/fsm_logic.c: In function 'FSM_rosso_on':
+../Core/Src/fsm_logic.c:234:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  234 | }
+      | ^
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11368	     12	   1676	  13056	   3300	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+16:39:15 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_giallo_on':
+../Core/Src/fsm_logic.c:229:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  229 | }
+      | ^
+../Core/Src/fsm_logic.c: In function 'FSM_rosso_on':
+../Core/Src/fsm_logic.c:232:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  232 | }
+      | ^
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11368	     12	   1676	  13056	   3300	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+16:44:37 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_verde_on':
+../Core/Src/fsm_logic.c:245:15: error: invalid storage class for function 'FSM_giallo_on'
+  245 | static int8_t FSM_giallo_on(){
+      |               ^~~~~~~~~~~~~
+../Core/Src/fsm_logic.c: In function 'FSM_giallo_on':
+../Core/Src/fsm_logic.c:247:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  247 | }
+      | ^
+../Core/Src/fsm_logic.c: In function 'FSM_verde_on':
+../Core/Src/fsm_logic.c:249:15: error: invalid storage class for function 'FSM_rosso_on'
+  249 | static int8_t FSM_rosso_on(){
+      |               ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c: In function 'FSM_rosso_on':
+../Core/Src/fsm_logic.c:250:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  250 | }
+      | ^
+../Core/Src/fsm_logic.c: In function 'FSM_verde_on':
+../Core/Src/fsm_logic.c:258:1: error: expected declaration or statement at end of input
+  258 | }
+      | ^
+../Core/Src/fsm_logic.c: At top level:
+../Core/Src/fsm_logic.c:74:16: warning: 'FSM_giallo_on' used but never defined
+   74 |  static int8_t FSM_giallo_on();
+      |                ^~~~~~~~~~~~~
+../Core/Src/fsm_logic.c:75:16: warning: 'FSM_rosso_on' used but never defined
+   75 |  static int8_t FSM_rosso_on();
+      |                ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c: In function 'FSM_verde_on':
+../Core/Src/fsm_logic.c:259: warning: control reaches end of non-void function [-Wreturn-type]
+../Core/Src/fsm_logic.c: At top level:
+../Core/Src/fsm_logic.c:255:6: warning: 'HAL_TIM_PeriodElapsedCallback' defined but not used [-Wunused-function]
+  255 | void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/fsm_logic.c:249:15: warning: 'FSM_rosso_on' defined but not used [-Wunused-function]
+  249 | static int8_t FSM_rosso_on(){
+      |               ^~~~~~~~~~~~
+../Core/Src/fsm_logic.c:245:15: warning: 'FSM_giallo_on' defined but not used [-Wunused-function]
+  245 | static int8_t FSM_giallo_on(){
+      |               ^~~~~~~~~~~~~
+make: *** [Core/Src/subdir.mk:55: Core/Src/fsm_logic.o] Error 1
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
+16:47:42 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+../Core/Src/fsm_logic.c: In function 'FSM_rosso_on':
+../Core/Src/fsm_logic.c:244:16: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+  244 |         int8_t res = FSM_ERR;
+      |                ^~~
+../Core/Src/fsm_logic.c:256:1: warning: no return statement in function returning non-void [-Wreturn-type]
+  256 | }
+      | ^
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11624	     12	   1676	  13312	   3400	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+16:49:47 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11640	     12	   1676	  13328	   3410	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+16:55:04 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11864	     12	   1676	  13552	   34f0	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 

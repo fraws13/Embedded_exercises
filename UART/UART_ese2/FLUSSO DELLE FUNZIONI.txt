@@ -1,0 +1,137 @@
+RELAZIONE TECNICA: FLUSSO DI ESECUZIONE DEL FIRMWARE (EVENT-DRIVEN)
+
+FASE 1: INIZIALIZZAZIONE E STATO DI CALMA (IL MAIN)
+
+Quando la scheda viene alimentata o resettata, l'esecuzione parte dalla
+funzione main():
+
+1. Configurazione Hardware: Vengono chiamate le funzioni di sistema (HAL_Init(),
+SystemClock_Config()) e le inizializzazioni delle periferiche generate
+dal configuratore grafico (MX_GPIO_Init(), MX_LPUART1_UART_Init()).
+2. Il Ciclo Infinito (while(1)): La CPU entra nel loop principale. Qui esegue
+continuamente il toggle del pin del LED (HAL_GPIO_TogglePin) e poi si mette
+in attesa temporizzata tramite la funzione HAL_Delay(half_period).
+3. Stato di Calma: Di base, la variabile half_period e' inizializzata a 500 ms,
+quindi il LED lampeggia con un periodo totale di 1 secondo (500ms acceso e
+500ms spento). In questa fase iniziale, la periferica LPUART1 non e' ancora
+attiva in ricezione.
+
+---
+
+FASE 2: PRESSIONE DEL PULSANTE (RICHIESTA DEL NUOVO PERIODO)
+
+Il flusso cambia quando l'utente preme il pulsante hardware sulla scheda.
+
+Flusso logico:
+[Pressione Pulsante] -> [Hardware genera EXTI Interrupt] -> [La CPU salta in HAL_GPIO_EXTI_Callback]
+
+Logica di: HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+
+* Chi la attiva: L'hardware del controller degli interrupt esterni (EXTI)
+quando rileva il cambio di stato logico sul pin associato al pulsante.
+* Cosa fa:
+1. Verifica che l'interrupt provenga dal pulsante corretto tramite il
+controllo (GPIO_Pin == BUTTON_Pin).
+2. Esegue HAL_UART_AbortReceive(&hlpuart1): questa funzione interrompe
+qualsiasi ascolto asincrono precedente della UART, azzera i flag interni
+di ricezione e forza la periferica nello stato READY (libero).
+3. Reset del software: Azzera l'indice del buffer (idx = 0) e pulisce l'array
+di caratteri tramite memset() per garantire che residui di digitazioni
+precedenti non sporchino il nuovo dato.
+4. Esegue HAL_UART_Transmit_IT(...): avvia la trasmissione non bloccante
+della stringa "digita il periodo:\r\n". La CPU si limita a depositare i
+dati nel registro di trasmissione, abilita l'interrupt hardware di
+trasmissione (TXE) e libera immediatamente la CPU, che ritorna nel
+while(1) a gestire il LED mentre la periferica invia i bit in background.
+
+
+
+---
+
+FASE 3: FINE TRASMISSIONE (SINCRONIZZAZIONE DELLA RICEZIONE)
+
+Mentre il testo viaggia sul bus seriale, l'hardware della UART invia un
+carattere alla volta in modo autonomo.
+
+Flusso logico:
+[Finiti i bit del messaggio] -> [Hardware genera TX Interrupt] -> [La CPU salta in HAL_UART_TxCpltCallback]
+
+Logica di: HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
+
+* Chi la attiva: La libreria HAL, richiamata dall'interrupt hardware di
+trasmissione completata, nel microsecondo esatto in cui l'ultimo bit dello
+stop-bit del messaggio esce fisicamente dal pin TX.
+* Cosa fa:
+1. Verifica che la periferica che ha scatenato l'evento sia quella corretta
+(huart == &hlpuart1).
+2. Esegue la prima richiesta di ricezione asincrona tramite la funzione
+HAL_UART_Receive_IT(&hlpuart1, (uint8_t*) &c, 1).
+3. Questa istruzione dice all'hardware della UART: "Da questo momento in poi,
+non appena un singolo byte entra dall'esterno nel registro hardware RDR,
+alza il flag RXNE e genera un interrupt. Salva quel byte nella variabile
+globale 'c'". Una volta armata la ricezione, la callback termina.
+
+
+
+---
+
+FASE 4: DIGITAZIONE DEL NUMERO (RICEZIONE CARATTERE PER CARATTERE)
+
+L'utente inizia a digitare le cifre del periodo sul terminale del PC e infine
+preme il tasto Invio. Ogni volta che un singolo carattere viene inviato dal PC:
+
+Flusso logico:
+[Tasto premuto su PC] -> [Dato entra in RDR] -> [Hardware solleva RXNE] -> [La CPU salta in HAL_UART_RxCpltCallback]
+
+Logica di: HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+
+* Chi la attiva: L'hardware della UART ogni volta che termina di ricostruire
+un byte intero nel registro RDR, dopo che la logica interna della HAL lo ha
+prelevato e salvato nella variabile globale 'c'.
+* Cosa fa (Logica di controllo del carattere):
+* Caso A: Il carattere ricevuto e' una cifra numerica (da '0' a '9')
+* Il codice memorizza il carattere nel vettore: buffer[idx++] = c;
+* Esegue un controllo di sicurezza per non sforare la dimensione massima
+dell'array (SIZE - 1). Se il buffer si riempie, forza la chiusura della
+stringa inserendo il terminatore '\0', converte il testo in valore
+intero con atoi(buffer), calcola il semi-periodo e resetta l'indice.
+
+
+* Caso B: Il carattere ricevuto e' un terminatore di riga ('\n' oppure '\r')
+* Significa che l'utente ha premuto Invio: la digitazione e' conclusa.
+* Il codice inserisce il carattere di fine stringa: buffer[idx] = '\0';
+* Chiama la funzione atoi(buffer) che converte la stringa di caratteri
+numerici in un valore intero puro (es. la stringa "100" diventa il
+numero 100).
+* Calcola il semi-periodo: half_period = atoi(buffer) / 2;
+In questo preciso istante, il lampeggio del LED nel while(1) cambia
+frequenza, poiche' il valore della variabile in memoria e' stato modificato.
+* Azzera l'indice (idx = 0) per preparare il buffer alla prossima chiamata.
+
+
+* Il Riarmo Hardware (FONDAMENTALE):
+In fondo alla funzione viene chiamata nuovamente l'istruzione
+HAL_UART_Receive_IT(&hlpuart1, (uint8_t*) &c, 1);
+Poiche' la UART esegue un interrupt singolo per ogni specifica richiesta di
+ricezione, questa riga e' indispensabile per riarmare l'interruttore
+hardware. Senza questo riarmo, il sistema leggerebbe solo il primo
+carattere digitato e poi smetterebbe di ricevere.
+
+
+
+---
+
+## SINTESI DELL'EFFICIENZA DEL CODICE
+
+L'efficienza di questa architettura risiede nel fatto che la CPU non spreca
+mai cicli di clock in loop di attesa bloccanti (polling) per aspettare l'input
+dell'utente o i tempi fisici dei pin hardware.
+
+* Il loop principale (while(1)) e' dedicato esclusivamente all'inversione dello
+stato del LED e all'attesa temporizzata.
+* Le periferiche di Input/Output (il pulsante EXTI e la linea seriale UART RX/TX)
+agiscono come interruzioni asincrone: congelano l'esecuzione del main per una
+frazione di microsecondo, aggiornano i dati o i flag in RAM attraverso le
+rispettive funzioni di Callback, e restituiscono subito il controllo al
+flusso principale, che si adegua istantaneamente alle nuove impostazioni.
+===============================================================================

@@ -1,0 +1,1 @@
+Toggle del led tramite la pressione del pulsante usando i moduli Led e Button, e gestione di un'automa a stati finiti di Moore.

@@ -1,0 +1,17 @@
+11:41:09 **** Incremental Build of configuration Debug for project ese1_timer ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc -o "ese1_timer.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\recapEsercizi\timer\ese1_timer\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="ese1_timer.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: ese1_timer.elf
+ 
+arm-none-eabi-size  ese1_timer.elf 
+arm-none-eabi-objdump -h -S ese1_timer.elf  > "ese1_timer.list"
+   text	   data	    bss	    dec	    hex	filename
+   9496	     12	   1796	  11304	   2c28	ese1_timer.elf
+Finished building: default.size.stdout
+ 
+Finished building: ese1_timer.list
+ 
+
+11:41:10 Build Finished. 0 errors, 0 warnings. (took 881ms)
+

@@ -1,0 +1,227 @@
+/*
+ * fsm_logic.c
+ *
+ *  Created on: Apr 3, 2024
+ *      Author: Gennaro
+ */
+
+
+#include "fsm_logic.h"
+
+#define DEFAULT_BUTTON_DELAY		(100) //100ms di ritardo per la lettura del pulsante
+
+
+/**
+ * Enumeration machine's states
+ */
+typedef enum fsm_state_enum{
+	LED_OFF	= 0,
+	LED_ON	= 1
+} fsm_state_t;
+
+/*
+ * The FSM is a Moore machine that is updated at each step cycle
+ * The input are read before evaluating state and output changes
+ * therefore, we need to store the value from each input device at a given cycle
+ *
+ * This structure represent the state read from the input devices at each cycle
+ * it buffers the state of each input ensuring that is stable for the overall cycle duration
+ */
+typedef struct FSM_input_s{
+	button_state_t button;	 		//Stable value of the button at current step
+	button_state_t button_last;		//Stable value of the button at previous step
+}FSM_input_t;
+
+
+/**
+ * FSM Main Structure
+ * It is composed by the input and outputs as well as
+ * the current status of the machine and the current input reads
+ */
+typedef struct FSM_s
+{
+	// FSM Inputs devices
+	button_t* button;
+
+	// FSM Inputs state
+	FSM_input_t in;
+
+	// FSM Outputs devices
+	led_t* led;
+
+	// FSM current status
+	fsm_state_t state;
+
+	uint32_t cycle_duration;
+} FSM_t;
+
+
+/*
+ * Private machine state
+ */
+static FSM_t fsm;
+
+
+/*
+ * Private function to read and buffers the inputs
+ */
+static int8_t FSM_read_inputs();
+
+
+/*
+ * Private function to update the current status and the output
+ */
+static int8_t FSM_update_state();
+static int8_t FSM_led_off();
+static int8_t FSM_led_on();
+
+
+
+/*
+ * Public init function
+ */
+/**
+ * Inizializza il FSM
+ * @param led: puntatore alla struct led
+ * @param button: puntatore alla struct button
+ * @return: FSM_OK se inizializzazioneRiuscita, FSM_ERR altrimenti
+ */
+int8_t FSM_init(led_t* led, button_t* button){
+	//inizializza la variabile res a FSM_ERR, ovvero ad errore
+	uint8_t res = FSM_ERR;
+
+	//se il puntatore alla struct led e button sono validi, allora inizializza il FSM
+	if(led && button)
+	{
+		//inizializza lo stato del FSM a LED_OFF, ovvero lo stato di partenza
+		fsm.state = LED_OFF;
+		//assegna il puntatore alla struct led al FSM
+		fsm.led = led;
+		//assegna il puntatore alla struct button al FSM
+		fsm.button = button;
+		//assegna il ciclo di durata al FSM
+		fsm.cycle_duration= cycle_duration;
+
+		//se la funzione button_set_delay non ritorna BUTTON_OK, allora setta res a FSM_ERR
+		//setto il ritardo di lettura del pulsante a 100ms alla struct button
+		if(button_set_delay(fsm.button, DEFAULT_BUTTON_DELAY) != BUTTON_OK )
+			res = FSM_ERR;
+		else
+			res = FSM_OK;
+	}
+
+	return res;
+}
+
+/*
+ * Public step function
+ */
+/**
+ * Esegue un passo del FSM
+ * @return: FSM_OK se passoRiuscito, FSM_ERR altrimenti
+ */
+int8_t FSM_step(){
+	//inizializza la variabile res a FSM_ERR, ovvero ad errore
+	int8_t res = FSM_ERR;
+
+	uint32_t duration=0; //calcola la durata del passo
+
+	if(FSM_read_inputs() == FSM_OK){
+		res = FSM_OK;
+	}
+
+	if( (res == FSM_OK) && (FSM_update_state() != FSM_OK) ){
+		res = FSM_ERR;
+	}
+	duration =HAL_GetTick()-start;
+	if(duration<fsm.ncycle_duration){
+		HAL_Delay(fsm.cycle_duration - duration);
+	}else{
+		return FSM_ERR;
+	}
+
+	return res;
+}
+
+//********************************************************************************
+//******	STATIC FUNCTIONS
+//**************************************************************************
+/**
+ * Legge gli input del FSM
+ * @return: FSM_OK se letturaRiuscita, FSM_ERR altrimenti
+ */
+static int8_t FSM_read_inputs(){
+	int8_t res = FSM_ERR;
+	//assegna il valore attuale del pulsante alla variabile button_last
+	fsm.in.button_last = fsm.in.button;
+	//
+	if(button_read(fsm.button, &fsm.in.button) == BUTTON_OK){
+			res = FSM_OK;
+	}
+	return res;
+}
+
+
+static int8_t FSM_update_state(){
+	int8_t res = FSM_ERR;
+
+
+	switch(fsm.state)
+	{
+		case LED_OFF:
+			if(FSM_led_off() == FSM_OK){
+				res = FSM_OK;
+			}
+			break;
+		case LED_ON:
+			if(FSM_led_on() == FSM_OK){
+				res = FSM_OK;
+			}
+			break;
+		default:
+			res = FSM_ERR;
+			break;
+	}
+	return res;
+}
+
+
+/**
+ * Esegue lo stato di accensione della lampada
+ * @return: FSM_OK se statoRiuscito, FSM_ERR altrimenti
+ */
+static int8_t FSM_led_off(){
+	//inizializza la variabile res a FSM_ERR, ovvero ad errore
+	int8_t res = FSM_ERR;
+	//se il valore attuale del pulsante è alto e il valore attuale del pulsante è diverso dal valore attuale, allora accende la lampada
+	if( (fsm.in.button == GPIO_PIN_SET) && (fsm.in.button_last != fsm.in.button) ){
+		//accende la lampada
+		if(led_on(fsm.led) == LED_OK){
+			fsm.state = LED_ON;
+			res = FSM_OK;
+		}else{
+			res = FSM_ERR;
+		}
+	}else
+		res = FSM_OK;
+
+	return res;
+}
+
+static int8_t FSM_led_on(){
+	int8_t res = FSM_ERR;
+
+	if( (fsm.in.button == GPIO_PIN_SET) && (fsm.in.button_last != fsm.in.button) ){
+		if(led_off(fsm.led) == LED_OK){
+			fsm.state = LED_OFF;
+			res = FSM_OK;
+		}else{
+			res = FSM_ERR;
+		}
+	}else
+		res = FSM_OK;
+
+	return res;
+}
+
+

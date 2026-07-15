@@ -1,0 +1,6 @@
+../Core/Src/main.c:77:5:main	56	static
+../Core/Src/main.c:138:6:SystemClock_Config	88	static
+../Core/Src/main.c:175:6:HAL_SPI_TxRxCpltCallback	40	static
+../Core/Src/main.c:196:6:HAL_UART_TxCpltCallback	16	static
+../Core/Src/main.c:203:6:HAL_SPI_ErrorCallback	16	static
+../Core/Src/main.c:220:6:Error_Handler	4	static,ignoring_inline_asm

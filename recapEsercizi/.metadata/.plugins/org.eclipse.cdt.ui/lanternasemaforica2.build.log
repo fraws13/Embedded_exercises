@@ -1,0 +1,17 @@
+16:55:04 **** Incremental Build of configuration Debug for project lanternasemaforica2 ****
+make -j14 all 
+arm-none-eabi-gcc "../Core/Src/fsm_logic.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32G474xx -c -I../Core/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc -I../Drivers/STM32G4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32G4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/fsm_logic.d" -MT"Core/Src/fsm_logic.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/fsm_logic.o"
+arm-none-eabi-gcc -o "lanternasemaforica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforica2\lanternasemaforica2\STM32G474RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="lanternasemaforica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: lanternasemaforica2.elf
+ 
+arm-none-eabi-size  lanternasemaforica2.elf 
+arm-none-eabi-objdump -h -S lanternasemaforica2.elf  > "lanternasemaforica2.list"
+   text	   data	    bss	    dec	    hex	filename
+  11864	     12	   1676	  13552	   34f0	lanternasemaforica2.elf
+Finished building: default.size.stdout
+ 
+Finished building: lanternasemaforica2.list
+ 
+
+16:55:04 Build Finished. 0 errors, 0 warnings. (took 650ms)
+
