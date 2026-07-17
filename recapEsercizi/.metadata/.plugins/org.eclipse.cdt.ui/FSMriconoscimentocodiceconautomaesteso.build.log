@@ -1,0 +1,10 @@
+15:55:39 **** Incremental Build of configuration Debug for project FSMriconoscimentocodiceconautomaesteso ****
+make -j14 all 
+arm-none-eabi-size  FSMriconoscimentocodiceconautomaesteso.elf 
+   text	   data	    bss	    dec	    hex	filename
+  20040	     12	   1764	  21816	   5538	FSMriconoscimentocodiceconautomaesteso.elf
+Finished building: default.size.stdout
+ 
+
+15:55:39 Build Finished. 0 errors, 0 warnings. (took 205ms)
+

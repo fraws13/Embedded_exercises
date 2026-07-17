@@ -1,0 +1,177 @@
+#include "fsm_logic.h"
+#include "usart.h" //per la comunicazione seriale
+#include "string.h" //per la gestione delle stringhe
+#define CODE_LENGTH		(4) //lunghezza del codice
+
+/**
+ * Enumeration machine's states
+ */
+typedef enum fsm_state_enum{
+	COLLECT_CODE=0,
+	CHECK_CODE=1,
+	CORRECT_CODE=2,
+	INCORRECT_CODE=3,
+
+} fsm_state_t;
+
+/*
+ * The FSM is a Moore machine that is updated at each step cycle
+ * The input are read before evaluating state and output changes
+ * therefore, we need to store the value from each input device at a given cycle
+ *
+ * This structure represent the state read from the input devices at each cycle
+ * it buffers the state of each input ensuring that is stable for the overall cycle duration
+ */
+typedef struct FSM_input_s{
+	uint8_t buffer_ready;
+	uint8_t buffer[CODE_LENGTH];
+
+
+}FSM_input_t;
+
+
+/**
+ * FSM Main Structure
+ * It is composed by the input and outputs as well as
+ * the current status of the machine and the current input reads
+ */
+typedef struct FSM_s
+{
+	fsm_state_t state;
+	led_t* led_verde;
+	FSM_input_t in;
+
+	uint8_t real_code[CODE_LENGTH];//codice reale
+	uint8_t rx_buffer[CODE_LENGTH]; //codice inserito dall'utente
+	uint8_t rx_index; //indice del codice inserito dall'utente
+	uint8_t uart_rx_byte;           // byte per HAL_UART_Receive_IT
+	uint8_t code_correct; //flag per indicare se il codice inserito dall'utente è corretto
+	uint8_t uart_tx_completed; //flag per indicare se il messaggio è stato inviato
+	volatile uint8_t buffer_ready;  // flag grezzo (come alarm_state)
+
+
+
+
+} FSM_t;
+
+
+/*
+ * Private machine state
+ */
+static FSM_t fsm;
+
+
+/*
+ * Private function to read and buffers the inputs
+ */
+static int8_t FSM_read_inputs();
+static int8_t FSM_update_state();
+
+
+/*
+ * Private function to update the current status and the output
+ */
+static void printMessage();
+
+
+/*
+ * Public init function
+ */
+int8_t FSM_init(led_t* led_verde, uint32_t cycle_duration)
+{
+	if(!led_verde){
+		return FSM_ERR;
+	}
+
+	fsm.state = COLLECT_CODE;
+	fsm.led_verde = led_verde;
+	fsm.uart_tx_completed=1;
+	fsm.rx_index=0;
+	fsm.code_correct=0;
+	fsm.buffer_ready=0;
+	fsm.real_code[0]=1;
+	fsm.real_code[1]=2;
+	fsm.real_code[2]=3;
+	fsm.real_code[3]=4;
+
+	printMessage("Inserisci codice (4 cifre):\r\n");
+	//armo la ricezione per essere pronto a ricevere il primo byte
+	HAL_UART_Receive_IT(&hlpuart1, &fsm.uart_rx_byte,1)
+	return FSM_OK;
+}
+
+/*
+ * Public step function
+ */
+int8_t FSM_step(){
+	int8_t res = FSM_ERR;
+	uint32_t cycle_start = 0;
+	uint32_t cycle_runtime = 0;
+
+	cycle_start = HAL_GetTick();
+
+	if(FSM_read_inputs() == FSM_OK){
+		res = FSM_OK;
+	}
+
+	if( (res == FSM_OK) && (FSM_update_state() != FSM_OK) ){
+		res = FSM_ERR;
+	}
+
+	cycle_runtime = HAL_GetTick() - cycle_start;
+
+	if(FSM_CYCLE_DURATION > cycle_runtime)
+	{
+		HAL_Delay(FSM_CYCLE_DURATION - cycle_runtime);
+	}
+	else
+	{
+		res = FSM_ERR;
+	}
+
+	return res;
+}
+
+//********************************************************************************
+//******	STATIC FUNCTIONS
+//**************************************************************************
+static void printMessage(const char* msg){
+	if(fsm.uart_tx_completed){
+		fsm.uart_tx_completed=0;
+		HAL_UART_Transmit_IT(&hlpuart1,(uint8_t*) msg, strlen(msg));
+	}
+}
+
+static int8_t FSM_read_inputs(){
+	int8_t res = FSM_ERR;
+	fsm.in.buffer_ready = fsm.buffer_ready;
+	fsm.buffer_ready = 0;
+	if(fsm.in.buffer_ready){
+		for(uint8_t i=0; i<CODE_LENGTH; i++){
+		}
+	}
+
+	return res;
+}
+
+static int8_t FSM_update_state(){
+	int8_t res = FSM_ERR;
+
+
+	switch(fsm.state)
+	{
+		default:
+			res = FSM_ERR;
+			break;
+	}
+	return res;
+}
+
+//********************************************************************************
+//******	CALLBACKS (if needed)
+//**************************************************************************
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	if(huart->Instance == LPUART1) {
+
+	}
+}

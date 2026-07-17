@@ -37,11 +37,11 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  000233a3  00000000  00000000  000099b1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   000064b1  00000000  00000000  0002cd54  2**0
+ 17 .debug_line   000064af  00000000  00000000  0002cd54  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000dee48  00000000  00000000  00033205  2**0
+ 18 .debug_str    000dee48  00000000  00000000  00033203  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  0011204d  2**0
+ 19 .comment      00000043  00000000  00000000  0011204b  2**0
                   CONTENTS, READONLY
  20 .debug_frame  00001374  00000000  00000000  00112090  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -3733,29 +3733,27 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
  8001648:	88fb      	ldrh	r3, [r7, #6]
  800164a:	f5b3 6f80 	cmp.w	r3, #1024	@ 0x400
  800164e:	d106      	bne.n	800165e <HAL_GPIO_EXTI_Callback+0x46>
-	        HAL_GPIO_WritePin(GPIOA, LED_G_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_G_Pin, GPIO_PIN_SET);
  8001650:	2201      	movs	r2, #1
  8001652:	2101      	movs	r1, #1
  8001654:	f04f 4090 	mov.w	r0, #1207959552	@ 0x48000000
  8001658:	f7ff f8ea 	bl	8000830 <HAL_GPIO_WritePin>
  800165c:	e016      	b.n	800168c <HAL_GPIO_EXTI_Callback+0x74>
-	    }
-	    else if (GPIO_Pin == BTN_V_Pin) {
+	} else if (GPIO_Pin == BTN_V_Pin) {
  800165e:	88fb      	ldrh	r3, [r7, #6]
  8001660:	f5b3 6f00 	cmp.w	r3, #2048	@ 0x800
  8001664:	d106      	bne.n	8001674 <HAL_GPIO_EXTI_Callback+0x5c>
-	        HAL_GPIO_WritePin(GPIOA, LED_V_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_V_Pin, GPIO_PIN_SET);
  8001666:	2201      	movs	r2, #1
  8001668:	2102      	movs	r1, #2
  800166a:	f04f 4090 	mov.w	r0, #1207959552	@ 0x48000000
  800166e:	f7ff f8df 	bl	8000830 <HAL_GPIO_WritePin>
  8001672:	e00b      	b.n	800168c <HAL_GPIO_EXTI_Callback+0x74>
-	    }
-	    else if (GPIO_Pin == BTN_R_Pin) {
+	} else if (GPIO_Pin == BTN_R_Pin) {
  8001674:	88fb      	ldrh	r3, [r7, #6]
  8001676:	f5b3 5f80 	cmp.w	r3, #4096	@ 0x1000
  800167a:	d107      	bne.n	800168c <HAL_GPIO_EXTI_Callback+0x74>
-	        HAL_GPIO_WritePin(GPIOA, LED_R_Pin, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOA, LED_R_Pin, GPIO_PIN_SET);
  800167c:	2201      	movs	r2, #1
  800167e:	2120      	movs	r1, #32
  8001680:	f04f 4090 	mov.w	r0, #1207959552	@ 0x48000000
@@ -3763,7 +3761,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) {
  8001688:	e000      	b.n	800168c <HAL_GPIO_EXTI_Callback+0x74>
 		return;
  800168a:	bf00      	nop
-	    }
+	}
 
 }
  800168c:	3708      	adds	r7, #8

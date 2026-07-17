@@ -2850,7 +2850,7 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_macro   0x0002303e      0x1bf ./Src/stm32g4xx_it.o
  .debug_macro   0x000231fd      0x1a6 ./Src/system_stm32g4xx.o
 
-.debug_line     0x00000000     0x64b1
+.debug_line     0x00000000     0x64af
  .debug_line    0x00000000      0xb38 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o
  .debug_line    0x00000b38      0xc9a ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.o
  .debug_line    0x000017d2      0xb21 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_gpio.o
@@ -2859,9 +2859,9 @@ LOAD C:/ST/STM32CubeIDE_2.1.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.exte
  .debug_line    0x00003f3f      0x71b ./Src/gpio.o
  .debug_line    0x0000465a      0x775 ./Src/main.o
  .debug_line    0x00004dcf      0x6f7 ./Src/stm32g4xx_hal_msp.o
- .debug_line    0x000054c6      0x80c ./Src/stm32g4xx_it.o
- .debug_line    0x00005cd2      0x764 ./Src/system_stm32g4xx.o
- .debug_line    0x00006436       0x7b ./Startup/startup_stm32g474retx.o
+ .debug_line    0x000054c6      0x80a ./Src/stm32g4xx_it.o
+ .debug_line    0x00005cd0      0x764 ./Src/system_stm32g4xx.o
+ .debug_line    0x00006434       0x7b ./Startup/startup_stm32g474retx.o
 
 .debug_str      0x00000000    0xdee48
  .debug_str     0x00000000    0xdee48 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o

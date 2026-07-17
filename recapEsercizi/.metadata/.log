@@ -3106,3 +3106,752 @@ COM4
 	 at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:113)
 	 at org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob.run(GdbBasicCliConsole.java:248)
 	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2026-07-16 00:23:02.873 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
+Framework arguments:  C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforicaRTC\lanternasemaforicaRTC\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforicaRTC\lanternasemaforicaRTC\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-07-16 00:23:24.160
+!MESSAGE Log4j2 initialized with config file C:\Users\frank\Documents\Uni\Embedded\project location\recapEsercizi\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-07-16 00:23:39.823
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.core.resources 4 275 2026-07-16 00:23:55.796
+!MESSAGE A resource exists with a different case: '/ESE1'.
+!STACK 0
+java.lang.Exception: A resource exists with a different case: '/ESE1'.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:352)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:330)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:94)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:305)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:291)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.internal.MCUProjectImporter$ProjectOperation.execute(MCUProjectImporter.java:125)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+
+!ENTRY org.eclipse.core.resources 4 368 2026-07-16 00:23:55.829
+!MESSAGE Resource '/ese1' does not exist.
+!STACK 0
+java.lang.Exception: Resource '/ese1' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:364)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:238)
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:183)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:244)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:231)
+	at com.st.stm32cube.ide.mcu.converters.AbstractCubeIDEProjectConfigurator.openReadmeFile(AbstractCubeIDEProjectConfigurator.java:1008)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.internal.MCUProjectImporter$3.run(MCUProjectImporter.java:387)
+	at org.eclipse.ui.internal.PendingSyncExec.run(PendingSyncExec.java:68)
+	at org.eclipse.ui.internal.UILockListener.doPendingWork(UILockListener.java:166)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4099)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3715)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:23:59.739
+!MESSAGE Indexed 'slave_blinking_ese1' (23 sources, 116 headers) in 2,52 sec: 10.703 declarations; 45.960 references; 3 unresolved inclusions; 47 syntax errors; 172 unresolved names (0,3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:02.114
+!MESSAGE Indexed 'master_ese2' (26 sources, 124 headers) in 2,37 sec: 12.652 declarations; 59.657 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:04.757
+!MESSAGE Indexed 'slave_ese2' (23 sources, 116 headers) in 2,64 sec: 10.713 declarations; 45.963 references; 3 unresolved inclusions; 46 syntax errors; 172 unresolved names (0,3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:08.899
+!MESSAGE Indexed 'master_ese3' (26 sources, 124 headers) in 2,01 sec: 12.648 declarations; 59.644 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:11.346
+!MESSAGE Indexed 'slave_ese3' (26 sources, 124 headers) in 2,4 sec: 12.656 declarations; 59.815 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:13.716
+!MESSAGE Indexed 'master_ese4' (27 sources, 125 headers) in 2,31 sec: 12.669 declarations; 59.776 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:15.566
+!MESSAGE Indexed 'dma_ese1' (24 sources, 121 headers) in 1,81 sec: 11.932 declarations; 52.916 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,26%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:20.853
+!MESSAGE Indexed 'dma_ese2' (21 sources, 118 headers) in 1,7 sec: 11.935 declarations; 52.922 references; 3 unresolved inclusions; 46 syntax errors; 174 unresolved names (0,27%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:22.853
+!MESSAGE Indexed 'CronometroLED' (23 sources, 117 headers) in 1,9 sec: 12.112 declarations; 65.585 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:26.989
+!MESSAGE Indexed 'semaforo_pedone' (23 sources, 116 headers) in 2 sec: 12.114 declarations; 65.816 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:28.939
+!MESSAGE Indexed 'DimmerAPulsanti' (23 sources, 116 headers) in 1,91 sec: 12.112 declarations; 65.624 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:30.993
+!MESSAGE Indexed 'PosizionamentoMicroservoLongShortPress' (23 sources, 117 headers) in 1,99 sec: 12.125 declarations; 65.937 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:32.905
+!MESSAGE Indexed 'Riconoscimento(Short vs Long Press)' (23 sources, 117 headers) in 1,87 sec: 12.098 declarations; 65.551 references; 3 unresolved inclusions; 47 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:34.099
+!MESSAGE Indexed 'lanternasemaforica' (25 sources, 121 headers) in 1,14 sec: 10.505 declarations; 40.559 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,33%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:36.090
+!MESSAGE Indexed 'lanternasemaforica2' (28 sources, 124 headers) in 1,95 sec: 12.672 declarations; 66.887 references; 3 unresolved inclusions; 46 syntax errors; 239 unresolved names (0,3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:38.132
+!MESSAGE Indexed 'lanternasemaforicaRTC' (29 sources, 125 headers) in 2,04 sec: 14.911 declarations; 91.007 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,16%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:39.789
+!MESSAGE Indexed 'Es.1ControllodiTreLedEsterniConInterruzioni' (20 sources, 112 headers) in 1,61 sec: 10.013 declarations; 39.502 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,34%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:42.579
+!MESSAGE Indexed 'master_slave_ese1' (26 sources, 121 headers) in 1,6 sec: 12.427 declarations; 59.428 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:44.391
+!MESSAGE Indexed 'esepwm' (23 sources, 116 headers) in 1,76 sec: 12.089 declarations; 65.465 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:46.364
+!MESSAGE Indexed 'ese2_pwmled' (23 sources, 116 headers) in 1,93 sec: 12.090 declarations; 65.519 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:48.275
+!MESSAGE Indexed 'DimmerCiclicoA4Livelli' (23 sources, 116 headers) in 1,86 sec: 12.104 declarations; 65.570 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:50.082
+!MESSAGE Indexed 'ese4_rgb' (23 sources, 116 headers) in 1,76 sec: 12.100 declarations; 65.676 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:51.975
+!MESSAGE Indexed 'ESE1' (23 sources, 116 headers) in 1,83 sec: 12.114 declarations; 65.601 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:53.796
+!MESSAGE Indexed 'ese4_codaCONtimer' (24 sources, 120 headers) in 1,77 sec: 12.407 declarations; 66.026 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:55.100
+!MESSAGE Indexed 'ese1_timer' (23 sources, 116 headers) in 1,3 sec: 12.116 declarations; 65.656 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:56.490
+!MESSAGE Indexed 'ese1_servo' (23 sources, 116 headers) in 1,35 sec: 12.095 declarations; 65.529 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:24:59.041
+!MESSAGE Indexed 'ese2StartEStopconPulsante' (23 sources, 116 headers) in 2,5 sec: 12.096 declarations; 65.521 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:01.100
+!MESSAGE Indexed 'ese3' (23 sources, 116 headers) in 1,92 sec: 12.098 declarations; 65.520 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:02.197
+!MESSAGE Indexed 'UART_ese2' (23 sources, 120 headers) in 1,09 sec: 11.945 declarations; 52.972 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,26%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:03.594
+!MESSAGE Indexed 'UART_ese3' (27 sources, 125 headers) in 1,4 sec: 14.123 declarations; 79.380 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:05.525
+!MESSAGE Indexed '13_HelloFSM' (25 sources, 118 headers) in 1,88 sec: 10.798 declarations; 40.374 references; 4 unresolved inclusions; 46 syntax errors; 173 unresolved names (0,34%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:07.159
+!MESSAGE Indexed '11_LedButtonModules' (23 sources, 116 headers) in 1,63 sec: 10.689 declarations; 39.988 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,34%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:08.805
+!MESSAGE Indexed 'ese2_Semaforo' (20 sources, 112 headers) in 1,6 sec: 9.895 declarations; 39.353 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,35%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:10.133
+!MESSAGE Indexed 'ese_Aniello' (20 sources, 112 headers) in 1,33 sec: 10.015 declarations; 39.406 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,34%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:12.197
+!MESSAGE Indexed 'ese2' (23 sources, 116 headers) in 2,02 sec: 12.116 declarations; 65.682 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:13.499
+!MESSAGE Indexed 'UART_ese1' (23 sources, 120 headers) in 1,3 sec: 11.938 declarations; 52.960 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,26%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 00:25:15.180
+!MESSAGE Indexed 'gugu_gaga' (20 sources, 113 headers) in 1,64 sec: 10.008 declarations; 39.407 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,34%)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 00:25:45.963
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM6
+COM3
+COM5
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 00:25:45.963
+!MESSAGE port: COM6
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 00:25:45.964
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 00:25:45.964
+!MESSAGE port: COM5
+!SESSION 2026-07-16 10:16:04.644 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-07-16 10:16:27.676
+!MESSAGE Log4j2 initialized with config file C:\Users\frank\Documents\Uni\Embedded\project location\recapEsercizi\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-07-16 10:17:07.252
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:17:09.525
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:17:09.525
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:25:54.788
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:25:54.788
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:27:14.699
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:27:14.700
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:29:12.936
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:29:12.937
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:40:47.783
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 10:40:47.783
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 12:06:11.862
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 12:06:11.863
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 16:07:54.473
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 16:07:54.474
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 16:07:56.161
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 16:07:56.162
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 16:22:01.217
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 16:22:01.218
+!MESSAGE port: 
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-16 17:09:13.112
+!MESSAGE Indexed 'FSMriconoscimentocodiceconautomaesteso' (28 sources, 125 headers) in 2,55 sec: 12.274 declarations; 53.703 references; 4 unresolved inclusions; 47 syntax errors; 217 unresolved names (0,33%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-16 18:22:04.050
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-16 18:24:16.126
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-16 18:24:34.154
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-16 18:24:47.325
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-16 18:46:53.329
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-16 18:47:06.132
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 18:48:43.500
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-16 18:48:43.501
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-16 18:49:20.135
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-16 19:04:20.813
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 44 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-16 19:04:20.814
+!MESSAGE Existing sessions are:
+!SESSION 2026-07-17 10:39:25.034 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=it_IT
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-07-17 10:40:29.669
+!MESSAGE Log4j2 initialized with config file C:\Users\frank\Documents\Uni\Embedded\project location\recapEsercizi\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-07-17 10:40:52.152
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 10:40:53.181
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 10:40:53.181
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 10:48:47.005
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 10:48:47.006
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 13:14:39.410
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 13:14:39.410
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 15:54:40.459
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 15:54:40.461
+!MESSAGE port: COM4
+
+!ENTRY org.eclipse.core.resources 4 275 2026-07-17 17:17:10.421
+!MESSAGE A resource exists with a different case: '/ESE1'.
+!STACK 0
+java.lang.Exception: A resource exists with a different case: '/ESE1'.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:352)
+	at org.eclipse.core.internal.resources.Resource.checkDoesNotExist(Resource.java:330)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:94)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:305)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:291)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.internal.MCUProjectImporter$ProjectOperation.execute(MCUProjectImporter.java:125)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.lambda$0(WorkspaceModifyOperation.java:112)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2451)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2476)
+	at org.eclipse.ui.actions.WorkspaceModifyOperation.run(WorkspaceModifyOperation.java:131)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:124)
+
+!ENTRY org.eclipse.core.resources 4 368 2026-07-17 17:17:10.427
+!MESSAGE Resource '/ese1' does not exist.
+!STACK 0
+java.lang.Exception: Resource '/ese1' does not exist.
+	at org.eclipse.core.internal.resources.ResourceException.provideStackTrace(ResourceException.java:42)
+	at org.eclipse.core.internal.resources.ResourceException.<init>(ResourceException.java:38)
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:364)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:238)
+	at org.eclipse.core.internal.resources.Project.checkAccessible(Project.java:183)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:244)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:231)
+	at com.st.stm32cube.ide.mcu.converters.AbstractCubeIDEProjectConfigurator.openReadmeFile(AbstractCubeIDEProjectConfigurator.java:1008)
+	at com.st.stm32cube.ide.mcu.ide.ui.project.internal.MCUProjectImporter$3.run(MCUProjectImporter.java:387)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4099)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3715)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:12.429
+!MESSAGE Indexed 'slave_blinking_ese1' (23 sources, 116 headers) in 4,27 sec: 10.704 declarations; 45.961 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:14.512
+!MESSAGE Indexed 'master_ese2' (26 sources, 124 headers) in 2,08 sec: 12.652 declarations; 59.657 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:16.259
+!MESSAGE Indexed 'slave_ese2' (23 sources, 116 headers) in 1,74 sec: 10.713 declarations; 45.964 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:18.824
+!MESSAGE Indexed 'master_ese3' (26 sources, 124 headers) in 1,99 sec: 12.648 declarations; 59.644 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:20.954
+!MESSAGE Indexed 'slave_ese3' (26 sources, 124 headers) in 1,83 sec: 12.656 declarations; 59.815 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:23.225
+!MESSAGE Indexed 'master_ese4' (27 sources, 125 headers) in 1,94 sec: 12.669 declarations; 59.776 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:25.286
+!MESSAGE Indexed 'dma_ese1' (24 sources, 121 headers) in 1,7 sec: 11.932 declarations; 52.916 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,26%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:27.519
+!MESSAGE Indexed 'dma_ese2' (21 sources, 118 headers) in 1,97 sec: 11.935 declarations; 52.922 references; 3 unresolved inclusions; 46 syntax errors; 174 unresolved names (0,27%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:29.962
+!MESSAGE Indexed 'CronometroLED' (23 sources, 117 headers) in 2,14 sec: 12.112 declarations; 65.585 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:32.361
+!MESSAGE Indexed 'semaforo_pedone' (23 sources, 116 headers) in 1,99 sec: 12.114 declarations; 65.816 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-17 17:17:34.995
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:35.337
+!MESSAGE Indexed 'DimmerAPulsanti' (23 sources, 116 headers) in 2,65 sec: 12.112 declarations; 65.624 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:37.965
+!MESSAGE Indexed 'PosizionamentoMicroservoLongShortPress' (23 sources, 117 headers) in 2,35 sec: 12.125 declarations; 65.937 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:40.254
+!MESSAGE Indexed 'Riconoscimento(Short vs Long Press)' (23 sources, 117 headers) in 2,03 sec: 12.098 declarations; 65.567 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:41.598
+!MESSAGE Indexed 'FSMriconoscimentocodiceconautomaesteso' (27 sources, 124 headers) in 1,33 sec: 12.221 declarations; 53.713 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,26%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:43.043
+!MESSAGE Indexed 'lanternasemaforica' (25 sources, 121 headers) in 1,43 sec: 10.505 declarations; 40.559 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,33%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:44.378
+!MESSAGE Indexed 'lanternasemaforica2' (28 sources, 124 headers) in 1,31 sec: 12.672 declarations; 66.885 references; 3 unresolved inclusions; 46 syntax errors; 239 unresolved names (0,3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:46.165
+!MESSAGE Indexed 'lanternasemaforicaconServoMotore' (28 sources, 124 headers) in 1,78 sec: 12.647 declarations; 66.697 references; 3 unresolved inclusions; 46 syntax errors; 238 unresolved names (0,3%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:48.733
+!MESSAGE Indexed 'lanternasemaforicaRTC' (35 sources, 134 headers) in 1,49 sec: 15.753 declarations; 92.978 references; 3 unresolved inclusions; 46 syntax errors; 237 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:51.448
+!MESSAGE Indexed 'Es.1ControllodiTreLedEsterniConInterruzioni' (20 sources, 112 headers) in 1,94 sec: 10.013 declarations; 39.502 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,34%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:53.770
+!MESSAGE Indexed 'master_slave_ese1' (26 sources, 121 headers) in 1,98 sec: 12.427 declarations; 59.428 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,24%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:56.094
+!MESSAGE Indexed 'esepwm' (23 sources, 116 headers) in 1,91 sec: 12.089 declarations; 65.465 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:17:58.314
+!MESSAGE Indexed 'ese2_pwmled' (23 sources, 116 headers) in 1,93 sec: 12.090 declarations; 65.519 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:00.493
+!MESSAGE Indexed 'DimmerCiclicoA4Livelli' (23 sources, 116 headers) in 1,94 sec: 12.104 declarations; 65.570 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:03.053
+!MESSAGE Indexed 'ese4_rgb' (23 sources, 116 headers) in 2,16 sec: 12.100 declarations; 65.676 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:05.121
+!MESSAGE Indexed 'ESE1' (23 sources, 116 headers) in 1,7 sec: 12.114 declarations; 65.601 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-17 17:18:06.514
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:07.584
+!MESSAGE Indexed 'ese1_timer' (23 sources, 116 headers) in 2,13 sec: 12.116 declarations; 65.656 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:09.741
+!MESSAGE Indexed 'ese4_codaCONtimer' (24 sources, 120 headers) in 1,82 sec: 12.407 declarations; 66.026 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:11.848
+!MESSAGE Indexed 'ese1_servo' (23 sources, 116 headers) in 1,82 sec: 12.095 declarations; 65.529 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:14.594
+!MESSAGE Indexed 'ese2StartEStopconPulsante' (23 sources, 116 headers) in 2,4 sec: 12.096 declarations; 65.521 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:17.814
+!MESSAGE Indexed 'ese3' (23 sources, 116 headers) in 2,78 sec: 12.098 declarations; 65.520 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:20.515
+!MESSAGE Indexed 'UART_ese2' (23 sources, 120 headers) in 2,44 sec: 11.945 declarations; 52.972 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,26%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:23.869
+!MESSAGE Indexed 'UART_ese3' (27 sources, 125 headers) in 2,63 sec: 14.123 declarations; 79.378 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,18%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:25.202
+!MESSAGE Indexed '13_HelloFSM' (25 sources, 118 headers) in 1,32 sec: 10.798 declarations; 40.374 references; 4 unresolved inclusions; 46 syntax errors; 173 unresolved names (0,34%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:27.049
+!MESSAGE Indexed '11_LedButtonModules' (23 sources, 116 headers) in 1,43 sec: 10.689 declarations; 39.988 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,34%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:29.727
+!MESSAGE Indexed 'ese2_Semaforo' (20 sources, 112 headers) in 1,99 sec: 9.895 declarations; 39.353 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,35%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:32.311
+!MESSAGE Indexed 'ese_Aniello' (20 sources, 112 headers) in 2,27 sec: 10.015 declarations; 39.406 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,34%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:35.790
+!MESSAGE Indexed 'ese2' (23 sources, 116 headers) in 3,09 sec: 12.116 declarations; 65.682 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,22%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:38.605
+!MESSAGE Indexed 'UART_ese1' (23 sources, 120 headers) in 2,45 sec: 11.938 declarations; 52.960 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,26%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-07-17 17:18:41.111
+!MESSAGE Indexed 'gugu_gaga' (20 sources, 113 headers) in 2,17 sec: 10.008 declarations; 39.407 references; 3 unresolved inclusions; 46 syntax errors; 171 unresolved names (0,34%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.launch 2 0 2026-07-17 17:18:49.505
+!MESSAGE Won't launch debug session since we failed to locate the binary.
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:19:34.028
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:19:34.028
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mcu.toolchain 4 4 2026-07-17 17:19:39.095
+!MESSAGE ST-LINK GDB server failed to start (exit code = 0)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2026-07-17 17:19:39.178
+!MESSAGE Error in final launch sequence:
+
+Failed to start GDB server
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to start GDB server
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:335)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:805)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1054)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$1.run(DebugUIPlugin.java:1257)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: org.eclipse.core.runtime.CoreException: Error in initializing ST-LINK device.
+Reason: (0) Unknown. Please check power and cabling to target.
+	at com.st.stm32cube.ide.mcu.debug.stlink.StLinkDebugHardware.verifyServer(StLinkDebugHardware.java:2149)
+	at com.st.stm32cube.ide.mcu.debug.launch.export.HardwareDebugUtil.startServer(HardwareDebugUtil.java:369)
+	at com.st.stm32cube.ide.mcu.debug.launch.export.HardwareDebugUtil.startServer(HardwareDebugUtil.java:113)
+	at com.st.stm32cube.ide.mcu.debug.launch.LaunchSequenceUtil.stepStartGDBServer(LaunchSequenceUtil.java:206)
+	at com.st.stm32cube.ide.mcu.debug.launch.GDBExtendedJtagDSFFinalLaunchSequence_7_12.stepStartGDBServer(GDBExtendedJtagDSFFinalLaunchSequence_7_12.java:104)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:160)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:475)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:437)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2026-07-17 17:19:39.178
+!MESSAGE Failed to start GDB server
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error in initializing ST-LINK device.
+Reason: (0) Unknown. Please check power and cabling to target.
+	at com.st.stm32cube.ide.mcu.debug.stlink.StLinkDebugHardware.verifyServer(StLinkDebugHardware.java:2149)
+	at com.st.stm32cube.ide.mcu.debug.launch.export.HardwareDebugUtil.startServer(HardwareDebugUtil.java:369)
+	at com.st.stm32cube.ide.mcu.debug.launch.export.HardwareDebugUtil.startServer(HardwareDebugUtil.java:113)
+	at com.st.stm32cube.ide.mcu.debug.launch.LaunchSequenceUtil.stepStartGDBServer(LaunchSequenceUtil.java:206)
+	at com.st.stm32cube.ide.mcu.debug.launch.GDBExtendedJtagDSFFinalLaunchSequence_7_12.stepStartGDBServer(GDBExtendedJtagDSFFinalLaunchSequence_7_12.java:104)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.cdt.dsf.concurrent.ReflectionSequence$ReflectionStep.execute(ReflectionSequence.java:160)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:475)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:437)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+!SUBENTRY 2 com.st.stm32cube.ide.mcu.toolchain 4 0 2026-07-17 17:19:39.178
+!MESSAGE Error in initializing ST-LINK device.
+Reason: (0) Unknown. Please check power and cabling to target.
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:19:41.805
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:19:41.805
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:20:33.817
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:20:33.818
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:21:19.828
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:21:19.829
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:21:50.801
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:21:50.802
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:22:31.853
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:22:31.854
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:23:50.862
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:23:50.863
+!MESSAGE port: 
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:26:59.881
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:26:59.881
+!MESSAGE port: COM4
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-07-17 17:28:57.377
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.gdb.internal.ui.actions.DsfTerminateCommand$3$1@43601517): Status OK: unknown code=0 OK' resulted in a rejected execution exception.
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:30:09.987
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 17:30:09.989
+!MESSAGE port: 
+
+!ENTRY org.eclipse.ui 4 0 2026-07-17 19:56:38.617
+!MESSAGE Unhandled event loop exception
+!STACK 0
+java.lang.NullPointerException: Cannot invoke "org.eclipse.swt.widgets.Shell.setVisible(boolean)" because the return value of "org.eclipse.ui.internal.findandreplace.overlay.FindReplaceOverlay.getShell()" is null
+	at org.eclipse.ui.internal.findandreplace.overlay.FindReplaceOverlay.updatePlacementAndVisibility(FindReplaceOverlay.java:844)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4099)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3715)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 20:05:20.910
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM4
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 20:05:20.911
+!MESSAGE port: COM4
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 20:56:43.619
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 35 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 20:56:43.620
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 21:01:26.897
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 38 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 21:01:26.897
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 21:03:36.138
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 41 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 21:03:36.139
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 21:15:53.358
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 44 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 21:15:53.359
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 21:23:21.738
+!MESSAGE Error - No active DSF-Session. tmpSessionId = 46 (contextManager row 121)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug 4 0 2026-07-17 21:23:21.739
+!MESSAGE Existing sessions are:
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 21:24:34.297
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-07-17 21:24:34.298
+!MESSAGE port: 

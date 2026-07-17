@@ -1,6 +1,0 @@
-../Core/Src/fsm_logic.c:91:8:FSM_init	4
-../Core/Src/fsm_logic.c:125:8:FSM_step	5
-../Core/Src/fsm_logic.c:157:15:FSM_read_inputs	2
-../Core/Src/fsm_logic.c:169:15:FSM_update_state	5
-../Core/Src/fsm_logic.c:197:15:FSM_led_off	4
-../Core/Src/fsm_logic.c:215:15:FSM_led_on	4
