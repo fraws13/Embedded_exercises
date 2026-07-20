@@ -1,0 +1,361 @@
+#include "fsm_logic.h"
+#include "string.h"
+#include "usart.h"
+#define CODE_LENGTH (7)
+#define DEFAULT_BUTTON_DELAY (200) //200 MS del bottone
+#define SERVO_DUTY_0_DEG (50)
+#define SERVO_DUTY_90_DEG (100)
+/**
+ * Enumeration machine's states
+ */
+typedef enum fsm_state_enum{
+	IDLE=0,
+	INSERT_CODE=1,
+	ACCESS_DENIED=2,
+	ACCESS_GRANTED=3,
+	DOOR_OPEN=4,
+} fsm_state_t;
+
+/*
+ * The FSM is a Moore machine that is updated at each step cycle
+ * The input are read before evaluating state and output changes
+ * therefore, we need to store the value from each input device at a given cycle
+ *
+ * This structure represent the state read from the input devices at each cycle
+ * it buffers the state of each input ensuring that is stable for the overall cycle duration
+ */
+typedef struct FSM_input_s{
+	button_state_t button;
+	button_state_t button_last;
+
+
+	int8_t timer_is_elpsed;
+
+}FSM_input_t;
+
+
+/**
+ * FSM Main Structure
+ * It is composed by the input and outputs as well as
+ * the current status of the machine and the current input reads
+ */
+typedef struct FSM_s
+{
+	led_t* led_giallo;
+	led_t* led_rosso;
+	button_t* button;
+	timer_t* timer;
+	timer_t* timer_servo;
+	FSM_input_t in;
+
+	fsm_state_t state;
+
+	//per la comunicazione uart
+	int8_t uart_rx_completed;
+	uint8_t rx_buffer[CODE_LENGTH];
+	uint8_t rx_index;
+	uint8_t rx_byte;
+	uint8_t buffer_ready;
+	uint8_t prompt_sent;
+	uint8_t real_code[6];
+
+
+
+} FSM_t;
+
+
+/*
+ * Private machine state
+ */
+static FSM_t fsm;
+
+
+/*
+ * Private function to read and buffers the inputs
+ */
+static int8_t FSM_read_inputs();
+static int8_t FSM_update_state();
+static int8_t FSM_idle();
+static int8_t FSM_insert_code();
+static int8_t FSM_access_denied();
+static int8_t FSM_door_open();
+static int8_t FSM_access_granted();
+static void printMessage(const char* msg);
+
+
+/*
+ * Private function to update the current status and the output
+ */
+
+
+/*
+ * Public init function
+ */
+int8_t FSM_init(led_t *led_giallo,led_t *led_rosso,button_t* button,timer_t* timer,timer_t* timer_servo)
+{
+	if(!led_giallo || !led_rosso || !button || !timer || !timer_servo){
+		return FSM_ERR;
+	}
+	fsm.led_giallo=led_giallo;
+	fsm.led_rosso=led_rosso;
+	fsm.button=button;
+	fsm.timer=timer;
+	fsm.timer_servo=timer_servo;
+	//inizializzo le variabili della fsm
+	fsm.buffer_ready=0;
+	fsm.rx_index=0;
+	fsm.uart_rx_completed=1;
+	fsm.state=IDLE;
+
+	fsm.in.timer_is_elpsed=0;
+	fsm.prompt_sent=0;
+
+	//imposto il vero codice
+	fsm.real_code[0]=1;
+	fsm.real_code[1]=2;
+	fsm.real_code[2]=3;
+	fsm.real_code[3]=4;
+	fsm.real_code[4]=5;
+	fsm.real_code[5]=6;
+
+	//imposto il i parametri dei bottoni
+	if(button_set_delay(fsm.button, DEFAULT_BUTTON_DELAY)!=BUTTON_OK){
+		return FSM_ERR;
+	}
+	return FSM_OK;
+}
+
+/*
+ * Public step function
+ */
+int8_t FSM_step(){
+	int8_t res = FSM_ERR;
+	uint32_t cycle_start = 0;
+	uint32_t cycle_runtime = 0;
+
+	cycle_start = HAL_GetTick();
+
+	if(FSM_read_inputs() == FSM_OK){
+		res = FSM_OK;
+	}
+
+	if( (res == FSM_OK) && (FSM_update_state() != FSM_OK) ){
+		res = FSM_ERR;
+	}
+
+	cycle_runtime = HAL_GetTick() - cycle_start;
+
+	if(FSM_CYCLE_DURATION > cycle_runtime)
+	{
+		HAL_Delay(FSM_CYCLE_DURATION - cycle_runtime);
+	}
+	else
+	{
+		res = FSM_ERR;
+	}
+
+	return res;
+}
+
+//********************************************************************************
+//******	STATIC FUNCTIONS
+//**************************************************************************
+static void printMessage(const char* msg){
+	if(fsm.uart_rx_completed){
+		fsm.uart_rx_completed=0;
+		HAL_UART_Transmit_IT(&hlpuart1, (uint8_t*) msg, strlen(msg));
+	}
+}
+
+static int8_t FSM_read_inputs(){
+	int8_t res = FSM_ERR;
+	//ad ogni nuovo ciclo sovrascrivo gli input
+	fsm.in.button_last=fsm.in.button;
+	if(button_read(fsm.button, &fsm.in.button)!=BUTTON_OK){
+		res=FSM_ERR;
+	}
+	//se button read ha aggiornato le variabili avrò un cambio di stato del fsm.in.button
+
+	//aggiorno eventualmente il flag del timer se è scaduto
+	fsm.in.timer_is_elpsed=timer_is_elapsed(fsm.timer);
+	res=FSM_OK;
+
+	return res;
+}
+
+static int8_t FSM_update_state(){
+	int8_t res = FSM_ERR;
+
+
+	switch(fsm.state)
+	{
+		case(IDLE):
+			if(FSM_idle()==FSM_OK){
+				res=FSM_OK;
+				break;
+			}
+		case (INSERT_CODE):
+			if (FSM_insert_code() == FSM_OK) {
+				res = FSM_OK;
+				break;
+			}
+		case(ACCESS_GRANTED):
+			if(FSM_access_granted()==FSM_OK){
+				res=FSM_OK;
+			}
+		case (ACCESS_DENIED):
+			if (FSM_access_denied() == FSM_OK) {
+				res = FSM_OK;
+				break;
+			}
+		case(DOOR_OPEN):
+			if(FSM_door_open()){
+				res=FSM_OK;
+			}
+		default:
+			res = FSM_ERR;
+			break;
+	}
+	return res;
+}
+
+
+static int8_t FSM_idle(){
+	int8_t res=FSM_ERR;
+	if((fsm.in.button==PRESSED) && (fsm.in.button_last==RELEASED)){
+		//il button è stato premuto per più di 200 ms
+		//faccio partire il timer per il led giallo
+		if((led_off(fsm.led_rosso)==LED_OK) && (timer_reset(fsm.timer)==TIMER_OK)
+		&& (timer_start(fsm.timer)==TIMER_OK) && (timer_set_period_ms(fsm.timer, 2000)==TIMER_OK)){
+			fsm.buffer_ready = 0
+			fsm.rx_index = 0
+			fsm.prompt_sent = 0
+			fsm.state=INSERT_CODE;
+			res=FSM_OK;
+		}
+	}else{
+		//rimango nello stato di idle
+		if((timer_set_duty_x10(fsm.timer_servo, TIM_CHANNEL_1, SERVO_DUTY_0_DEG)==TIMER_OK)
+		&&(led_off(fsm.led_giallo)==LED_OK) && (led_off(fsm.led_rosso)==LED_OK)){
+			return FSM_OK;
+		}
+
+	}
+	return res;
+
+}
+static int8_t FSM_insert_code(){
+	int8_t res=FSM_ERR;
+	if(!fsm.prompt_sent){
+		fsm.prompt_sent=1;
+		printMessage("inserisci il codice: ");
+		//armo la recezione a ricevere un byte
+		HAL_UART_Receive_IT(&hlpuart1, &fsm.rx_byte, 1);
+	}
+	if(fsm.buffer_ready){
+		//il codice inserito dall utente è completo
+		fsm.buffer_ready=0;
+
+		int8_t correct_code=1; //flag che mi dice se il codice è corretto
+		for(int8_t i=0;i<CODE_LENGTH-1;i++){
+			if(fsm.rx_buffer[i]-'0'!=fsm.real_code[i]){
+				correct_code=0;
+				break;
+			}
+		}
+		//resetto i flag
+		fsm.rx_index=0;
+		fsm.prompt_sent=0;
+		if(correct_code){
+			//porto il led giallo accesso e il servo a 90° imposto timer di 5 sec
+			if((led_on(fsm.led_giallo)==LED_OK)){
+				fsm.state=ACCESS_GRANTED;
+				res=FSM_OK;
+			}
+
+		}else{
+			//accendo il rosso e attivo timer 2 sec
+			if((led_off(fsm.led_giallo)==LED_OK)
+			&&(timer_reset(fsm.timer)==TIMER_OK) && (timer_start(fsm.timer)==TIMER_OK)
+			&& (timer_set_period_ms(fsm.timer, 2000))){
+				fsm.state=ACCESS_DENIED;
+				res=FSM_OK;
+			}
+		}
+	}
+	return res;
+}
+
+static int8_t FSM_access_granted(){
+	int8_t res=FSM_ERR;
+	if((timer_set_duty_x10(fsm.timer_servo, TIM_CHANNEL_1, SERVO_DUTY_90_DEG)==TIMER_OK)
+	&&(timer_reset(fsm.timer)==TIMER_OK) && (timer_start(fsm.timer)==TIMER_OK)
+	&& (timer_set_period_ms(fsm.timer, 5000)==TIMER_OK)){
+		fsm.state=DOOR_OPEN;
+		res=FSM_OK;
+	}
+	return res;
+}
+static int8_t FSM_access_denied(){
+	int8_t res=FSM_ERR;
+	return res;
+
+}
+static int8_t FSM_door_open(){
+	int8_t res=FSM_ERR;
+	if(fsm.in.timer_is_elpsed){
+		//sono passati 5 secondi, spengo il led giallo e chiudo il servo
+		if((timer_set_duty_x10(fsm.timer_servo, TIM_CHANNEL_1, SERVO_DUTY_0_DEG)==TIMER_OK)
+		&&(led_off(fsm.led_giallo)==LED_OK)){
+			fsm.state=IDLE;
+			res=FSM_OK;
+
+		}
+	}
+	return res;
+
+}
+
+//********************************************************************************
+//******	CALLBACKS (if needed)
+//**************************************************************************
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
+	if(&hlpuart1!=huart){
+		return;
+	}
+	if(fsm.rx_byte=='\n' || fsm.rx_byte=='\r'){
+		HAL_UART_Receive_IT(&hlpuart1, &fsm.rx_byte, 1);
+		return;
+	}
+	if(fsm.rx_byte>='0' && fsm.rx_byte<='9'){
+		//il valore è valido
+		//vedo se lo posso inserire
+		if(fsm.rx_index<CODE_LENGTH-1){
+			fsm.rx_buffer[fsm.rx_index++]=fsm.rx_byte;
+			printMessage("*");
+		}
+		if(fsm.rx_index==CODE_LENGTH-1){
+			fsm.rx_buffer[fsm.rx_index++] = '\0';
+			fsm.buffer_ready=1;
+		}
+	}else{
+		//si è inserito un carattere non numerico
+		//si si ripropone l inserimento
+		fsm.buffer_ready=0;
+		fsm.rx_index=0;
+	}
+	HAL_UART_Receive_IT(&hlpuart1, &fsm.rx_byte, 1);
+
+}
+
+void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
+	if(&hlpuart1==huart){
+		fsm.uart_rx_completed=1;
+	}
+}
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+	if(fsm.timer==&htim){
+		timer_period_elapsed(fsm.timer, htim);
+	}
+}

@@ -1,0 +1,10 @@
+17:39:28 **** Build of configuration Debug for project lanternasemaforicaconServoMotoreInterrupt ****
+make -j14 all 
+arm-none-eabi-size  lanternasemaforicaconServoMotoreInterrupt.elf 
+   text	   data	    bss	    dec	    hex	filename
+  16748	     12	   1852	  18612	   48b4	lanternasemaforicaconServoMotoreInterrupt.elf
+Finished building: default.size.stdout
+ 
+
+17:39:28 Build Finished. 0 errors, 0 warnings. (took 308ms)
+

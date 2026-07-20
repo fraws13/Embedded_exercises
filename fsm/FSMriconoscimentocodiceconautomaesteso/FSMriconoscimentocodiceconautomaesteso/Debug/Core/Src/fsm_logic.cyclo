@@ -2,10 +2,10 @@
 ../Core/Src/fsm_logic.c:110:8:FSM_step	5
 ../Core/Src/fsm_logic.c:142:13:printMessage	2
 ../Core/Src/fsm_logic.c:149:15:FSM_read_inputs	3
-../Core/Src/fsm_logic.c:162:15:FSM_update_state	5
-../Core/Src/fsm_logic.c:187:15:FSM_collect_code	2
-../Core/Src/fsm_logic.c:196:15:FSM_check_code	4
-../Core/Src/fsm_logic.c:213:15:FSM_correct_code	1
-../Core/Src/fsm_logic.c:222:15:FSM_incorrect_code	1
-../Core/Src/fsm_logic.c:236:6:HAL_UART_RxCpltCallback	6
-../Core/Src/fsm_logic.c:263:6:HAL_UART_TxCpltCallback	2
+../Core/Src/fsm_logic.c:165:15:FSM_update_state	5
+../Core/Src/fsm_logic.c:190:15:FSM_collect_code	2
+../Core/Src/fsm_logic.c:201:15:FSM_check_code	4
+../Core/Src/fsm_logic.c:219:15:FSM_correct_code	1
+../Core/Src/fsm_logic.c:228:15:FSM_incorrect_code	1
+../Core/Src/fsm_logic.c:242:6:HAL_UART_RxCpltCallback	6
+../Core/Src/fsm_logic.c:269:6:HAL_UART_TxCpltCallback	2

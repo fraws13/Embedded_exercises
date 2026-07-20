@@ -296,7 +296,7 @@ static int8_t FSM_rosso_on(){
 //******	CALLBACKS (if needed)
 //**************************************************************************
 //quando il timer scade, ovvero quando il counter del timer arriva al valore del array del timer, viene chiamata questa funzione
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *handeler)
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *handler)
 {
 	//verifico se il timer passato come parametro è quello del fsm
 	if(handler == fsm.timer){

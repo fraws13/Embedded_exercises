@@ -2,8 +2,8 @@
 ../Core/Src/button.c:24:8:button_set_delay	24	static
 ../Core/Src/button.c:37:8:button_get_delay	24	static
 ../Core/Src/button.c:56:8:button_read	32	static
-../Core/Src/button.c:91:15:button_get_port	24	static
-../Core/Src/button.c:104:15:button_get_pin_number	24	static
-../Core/Src/button.c:118:8:button_read_pressed	24	static
-../Core/Src/button.c:132:8:button_reset_pressed	24	static
-../Core/Src/button.c:147:8:button_pressed_handler	24	static
+../Core/Src/button.c:103:15:button_get_port	24	static
+../Core/Src/button.c:116:15:button_get_pin_number	24	static
+../Core/Src/button.c:130:8:button_read_pressed	24	static
+../Core/Src/button.c:144:8:button_reset_pressed	24	static
+../Core/Src/button.c:159:8:button_pressed_handler	24	static

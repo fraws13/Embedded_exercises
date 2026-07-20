@@ -1,0 +1,10 @@
+17:39:45 **** Incremental Build of configuration Debug for project simulazione1 ****
+make -j14 all 
+arm-none-eabi-size  simulazione1.elf 
+   text	   data	    bss	    dec	    hex	filename
+  28816	     12	   1988	  30816	   7860	simulazione1.elf
+Finished building: default.size.stdout
+ 
+
+17:39:45 Build Finished. 0 errors, 0 warnings. (took 263ms)
+

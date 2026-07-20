@@ -1,4 +1,4 @@
-18:48:59 **** Incremental Build of configuration Debug for project lanternasemaforicaRTC ****
+17:39:27 **** Build of configuration Debug for project lanternasemaforicaRTC ****
 make -j14 all 
 arm-none-eabi-size  lanternasemaforicaRTC.elf 
    text	   data	    bss	    dec	    hex	filename
@@ -6,5 +6,5 @@ arm-none-eabi-size  lanternasemaforicaRTC.elf
 Finished building: default.size.stdout
  
 
-18:49:00 Build Finished. 0 errors, 0 warnings. (took 205ms)
+17:39:27 Build Finished. 0 errors, 0 warnings. (took 303ms)
 

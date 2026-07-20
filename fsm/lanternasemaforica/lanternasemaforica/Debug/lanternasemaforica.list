@@ -214,15 +214,18 @@ int8_t button_read(button_t* button, button_state_t* state)
  80002c4:	2b00      	cmp	r3, #0
  80002c6:	d034      	beq.n	8000332 <button_read+0x94>
 	{
+		//ottengo il tick corrente
 		current_tick = HAL_GetTick();
  80002c8:	f000 fc50 	bl	8000b6c <HAL_GetTick>
  80002cc:	60f8      	str	r0, [r7, #12]
+		//calcolo il tempo trascorso dall'ultima lettura
 		elapsed_tick = current_tick - button->last_tick;
  80002ce:	687b      	ldr	r3, [r7, #4]
  80002d0:	68db      	ldr	r3, [r3, #12]
  80002d2:	68fa      	ldr	r2, [r7, #12]
  80002d4:	1ad3      	subs	r3, r2, r3
  80002d6:	613b      	str	r3, [r7, #16]
+		//leggo lo stato del pulsante , alto o basso, valore grezzo del pin fisico rimbalsi compresi
 		pin_state = HAL_GPIO_ReadPin(button->GPIOx, button->GPIO_Pin);
  80002d8:	687b      	ldr	r3, [r7, #4]
  80002da:	681a      	ldr	r2, [r3, #0]
@@ -233,7 +236,11 @@ int8_t button_read(button_t* button, button_state_t* state)
  80002e4:	f000 fee0 	bl	80010a8 <HAL_GPIO_ReadPin>
  80002e8:	4603      	mov	r3, r0
  80002ea:	75bb      	strb	r3, [r7, #22]
-
+		
+		//button->last_state è il valore della chiamata precedente
+		//button->state è il valore del pulsante attuale, valore stabile senza debounce
+		//se il valore del pulsante è cambiato
+		//oppure il valore letto è lo stesso di button->state, allora resetto il count per vedere se il segnale è stabile
 		if(pin_state != button->last_state || pin_state == button->state)
  80002ec:	687b      	ldr	r3, [r7, #4]
  80002ee:	79db      	ldrb	r3, [r3, #7]
@@ -252,6 +259,7 @@ int8_t button_read(button_t* button, button_state_t* state)
  8000304:	60da      	str	r2, [r3, #12]
 		}
 
+		//se il tempo trascorso è maggiore del delay, allora aggiorno lo stato del pulsante
 		if(elapsed_tick > button->delay)
  8000306:	687b      	ldr	r3, [r7, #4]
  8000308:	689b      	ldr	r3, [r3, #8]
@@ -259,6 +267,7 @@ int8_t button_read(button_t* button, button_state_t* state)
  800030c:	429a      	cmp	r2, r3
  800030e:	d907      	bls.n	8000320 <button_read+0x82>
 		{
+			//se il valore letto è diverso dallo stato attuale, allora aggiorno lo stato del pulsante
 			if(pin_state != button->state)
  8000310:	687b      	ldr	r3, [r7, #4]
  8000312:	799b      	ldrb	r3, [r3, #6]
@@ -273,10 +282,12 @@ int8_t button_read(button_t* button, button_state_t* state)
 			}
 		}
 
+		//aggiorno lo stato precedente per la prossima lettura
 		button->last_state = pin_state;
  8000320:	687b      	ldr	r3, [r7, #4]
  8000322:	7dba      	ldrb	r2, [r7, #22]
  8000324:	71da      	strb	r2, [r3, #7]
+		//assegno lo stato del pulsante alla variabile di uscita
 		*state = button->state;
  8000326:	687b      	ldr	r3, [r7, #4]
  8000328:	799a      	ldrb	r2, [r3, #6]
@@ -359,7 +370,7 @@ int8_t FSM_init(led_t* led_rosso, led_t* led_giallo, led_t* led_verde, button_t*
  800038a:	6a3b      	ldr	r3, [r7, #32]
  800038c:	6193      	str	r3, [r2, #24]
 		//setto il ritardo di lettura del pulsante a 200ms alla struct button
-		if(button_set_delay(fsm.button, DEFAULT_BUTTON_DELAY) != BUTTON_OK)
+		if(button_set_delay(fsm.button, DEFAULT_BUTTON_DELAY) != BUTTON_OK){
  800038e:	4b0a      	ldr	r3, [pc, #40]	@ (80003b8 <FSM_init+0x78>)
  8000390:	681b      	ldr	r3, [r3, #0]
  8000392:	21c8      	movs	r1, #200	@ 0xc8
@@ -372,10 +383,12 @@ int8_t FSM_init(led_t* led_rosso, led_t* led_giallo, led_t* led_verde, button_t*
  80003a0:	23ff      	movs	r3, #255	@ 0xff
  80003a2:	75fb      	strb	r3, [r7, #23]
  80003a4:	e001      	b.n	80003aa <FSM_init+0x6a>
-		else
+		}
+		else{
 			res = FSM_OK;
  80003a6:	2300      	movs	r3, #0
  80003a8:	75fb      	strb	r3, [r7, #23]
+		}
 	}
 	return res;
  80003aa:	f997 3017 	ldrsb.w	r3, [r7, #23]
@@ -558,7 +571,7 @@ static int8_t FSM_update_state(){
 			break;
  80004a6:	e01a      	b.n	80004de <FSM_update_state+0x6e>
 
-		//il rosso è acceso, accendo il giallo
+		//il rosso è acceso, lo spegno e accendo il giallo
 		case ROSSO_ON:
 			if(FSM_led_rosso() == FSM_OK){
  80004a8:	f000 f862 	bl	8000570 <FSM_led_rosso>
@@ -571,7 +584,7 @@ static int8_t FSM_update_state(){
 			}
 			break;
  80004b6:	e014      	b.n	80004e2 <FSM_update_state+0x72>
-		//il giallo è acceso, accendo il verde
+		//il giallo è acceso, lo spegno e accendo il verde
 		case GIALLO_ON:
 			if(FSM_led_giallo() == FSM_OK){
  80004b8:	f000 f894 	bl	80005e4 <FSM_led_giallo>
@@ -584,7 +597,7 @@ static int8_t FSM_update_state(){
 			}
 			break;
  80004c6:	e00e      	b.n	80004e6 <FSM_update_state+0x76>
-		//il verde è acceso, accendo il rosso
+		//il verde è acceso, lo spegno, tutti i led sono spenti
 		case VERDE_ON:
 			if(FSM_led_verde() == FSM_OK){
  80004c8:	f000 f8c6 	bl	8000658 <FSM_led_verde>

@@ -588,16 +588,19 @@ static int8_t FSM_read_inputs(){
 	int8_t res = FSM_ERR;
  800067e:	23ff      	movs	r3, #255	@ 0xff
  8000680:	71bb      	strb	r3, [r7, #6]
+	//ad ogni ciclo, leggo lo stato del buffer_ready e negli input della fsm
 	fsm.in.buffer_ready = fsm.buffer_ready;
  8000682:	4b13      	ldr	r3, [pc, #76]	@ (80006d0 <FSM_read_inputs+0x58>)
  8000684:	7e5b      	ldrb	r3, [r3, #25]
  8000686:	b2da      	uxtb	r2, r3
  8000688:	4b11      	ldr	r3, [pc, #68]	@ (80006d0 <FSM_read_inputs+0x58>)
  800068a:	721a      	strb	r2, [r3, #8]
+	//resetto il falg per far in modo che la fsm possa leggere nuovamente il buffer_ready
 	fsm.buffer_ready = 0;
  800068c:	4b10      	ldr	r3, [pc, #64]	@ (80006d0 <FSM_read_inputs+0x58>)
  800068e:	2200      	movs	r2, #0
  8000690:	765a      	strb	r2, [r3, #25]
+	//se il buffer è pronto leggo i 4 valori e li memorizzo nel buffer della fsm
 	if(fsm.in.buffer_ready){
  8000692:	4b0f      	ldr	r3, [pc, #60]	@ (80006d0 <FSM_read_inputs+0x58>)
  8000694:	7a1b      	ldrb	r3, [r3, #8]
@@ -713,6 +716,7 @@ static int8_t FSM_collect_code(void)
 {
  800073c:	b480      	push	{r7}
  800073e:	af00      	add	r7, sp, #0
+	//finche non ho ricevuto le 4 cifre, aspetto
 	if (!fsm.in.buffer_ready)
  8000740:	4b07      	ldr	r3, [pc, #28]	@ (8000760 <FSM_collect_code+0x24>)
  8000742:	7a1b      	ldrb	r3, [r3, #8]
@@ -721,6 +725,7 @@ static int8_t FSM_collect_code(void)
 		return FSM_OK;   // aspetta le 4 cifre
  8000748:	2300      	movs	r3, #0
  800074a:	e003      	b.n	8000754 <FSM_collect_code+0x18>
+	//se ho ricevuto le 4 cifre, passo allo stato di check_code
 	fsm.state = CHECK_CODE;
  800074c:	4b04      	ldr	r3, [pc, #16]	@ (8000760 <FSM_collect_code+0x24>)
  800074e:	2201      	movs	r2, #1
@@ -743,6 +748,7 @@ static int8_t FSM_check_code(void)
  8000764:	b480      	push	{r7}
  8000766:	b083      	sub	sp, #12
  8000768:	af00      	add	r7, sp, #0
+	
 	fsm.code_correct = 1;
  800076a:	4b16      	ldr	r3, [pc, #88]	@ (80007c4 <FSM_check_code+0x60>)
  800076c:	2201      	movs	r2, #1

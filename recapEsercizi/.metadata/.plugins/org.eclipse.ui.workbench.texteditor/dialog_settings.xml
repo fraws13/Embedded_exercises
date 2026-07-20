@@ -3,6 +3,14 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="false"/>
 	<list key="searchhistory">
+		<item value="led_on"/>
+		<item value="timer_set_period_ms"/>
+		<item value="DOOR_OPEN"/>
+		<item value="state"/>
+		<item value="step"/>
+		<item value="fsm"/>
+		<item value="pwm"/>
+		<item value="pmw"/>
 		<item value="period"/>
 	</list>
 </section>

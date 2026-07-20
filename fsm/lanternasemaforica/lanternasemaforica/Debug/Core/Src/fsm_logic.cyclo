@@ -1,8 +1,8 @@
 ../Core/Src/fsm_logic.c:84:8:FSM_init	6
-../Core/Src/fsm_logic.c:118:8:FSM_step	5
-../Core/Src/fsm_logic.c:152:15:FSM_read_inputs	2
-../Core/Src/fsm_logic.c:164:15:FSM_update_state	9
-../Core/Src/fsm_logic.c:206:16:FSM_led_off	6
-../Core/Src/fsm_logic.c:224:15:FSM_led_rosso	6
-../Core/Src/fsm_logic.c:242:15:FSM_led_giallo	6
-../Core/Src/fsm_logic.c:260:15:FSM_led_verde	6
+../Core/Src/fsm_logic.c:120:8:FSM_step	5
+../Core/Src/fsm_logic.c:154:15:FSM_read_inputs	2
+../Core/Src/fsm_logic.c:166:15:FSM_update_state	9
+../Core/Src/fsm_logic.c:208:16:FSM_led_off	6
+../Core/Src/fsm_logic.c:226:15:FSM_led_rosso	6
+../Core/Src/fsm_logic.c:244:15:FSM_led_giallo	6
+../Core/Src/fsm_logic.c:262:15:FSM_led_verde	6

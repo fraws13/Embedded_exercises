@@ -50,6 +50,7 @@ static volatile uint8_t set_period=0; //
 static char c;
 static char buffer[SIZE];
 static uint8_t idx;
+static uint8_t uart_rx_completed=1;
 
 /* USER CODE END PV */
 
@@ -161,10 +162,17 @@ void SystemClock_Config(void)
 
 //HAL_UART_Receive_IT(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size)
 //HAL_UART_Transmit_IT(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size)
+void print_message(const char* msg){
+	if(uart_rx_completed){
+		uart_rx_completed=0;
+		HAL_UART_Transmit_IT(&hlpuart1, (uint8_t*)msg, strlen(msg));
+
+	}
+}
+
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin == BUTTON_Pin){
-		const char *msg= "digita il periodo:\r\n";
 
 		//Dice alla UART di smettere immediatamente di ascoltare il canale in background.
 		//Cancella tutto quello che stavi aspettando di ricevere,
@@ -173,9 +181,8 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 		idx = 0;
 		memset(buffer, 0, SIZE); // Pulisce il buffer da vecchi residui
 
-
+		print_message("\r\ninserire il perdiodo\r\n");
 		//funzione non bloccante, delega il lavoro alla periferica hardaware(UART) e al NVIC, liberando la CPU
-		HAL_UART_Transmit_IT(&hlpuart1, (uint8_t*)msg, strlen(msg));
 	}
 }
 
@@ -184,6 +191,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 //in cui l'ultimo bit dell'ultimo byte è uscito fisicamente dal pin del microcontrollore
 void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart){
 	if(huart==&hlpuart1){
+		uart_rx_completed=1;
 		//deve essere della stessa interfaccia
 		//RICHIESTA DI RICEZIONE non BLOCCANTE
 		//quando il dato dall uart viene depositato nel RDR
@@ -214,7 +222,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart){
 			if (idx == SIZE - 1) {
 				//stiamo nel ultimo spazio disponibile del buffer, dobbiamo inserire il terminatore
 				buffer[idx] = '\0';
-				half_period = atoi(buffer) / 2;
+				half_period = (atoi(buffer)) / 2;
 				idx = 0;
 
 			}

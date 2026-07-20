@@ -26,6 +26,7 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\frank\Documents\Uni\Embedded\project location\fsm\lanternasemaforicaconServoMotoreInterrupt\lanternasemaforicaconServoMotoreInterrupt"/>
 			<item value="C:\Users\frank\Documents\Uni\Embedded\project location\fsm\FSMriconoscimentocodiceconautomaesteso\FSMriconoscimentocodiceconautomaesteso"/>
 			<item value="C:\Users\frank\Documents\Uni\Embedded\project location\fsm\led-module-master"/>
 			<item value="C:\Users\frank\Documents\Uni\Embedded\project location"/>
@@ -38,9 +39,9 @@
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
 		<section name="STSmartImportWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="514"/>
+			<item key="DIALOG_X_ORIGIN" value="365"/>
 			<item key="DIALOG_Y_ORIGIN" value="79"/>
-			<item key="DIALOG_WIDTH" value="885"/>
+			<item key="DIALOG_WIDTH" value="1179"/>
 			<item key="DIALOG_HEIGHT" value="629"/>
 			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>

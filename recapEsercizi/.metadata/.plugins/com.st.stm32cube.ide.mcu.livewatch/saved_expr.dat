@@ -1,3 +1,16 @@
 fsm.in.button
 fsm.state
-fsm.timer.elapsed
+fsm.buffer_ready
+fsm.rx_buffer
+fsm.rx_index
+fsm.rx_byte
+button_config.state
+button_config.state
+fsm.in.button_last
+button.state
+button.last_tick
+button.delay
+fsm.button.state
+fsm.in.rx_buffer
+fsm.period_verde_ms
+fsm.in.button_last
